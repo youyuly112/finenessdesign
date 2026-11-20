@@ -31,6 +31,8 @@ section{position:relative;padding:clamp(64px,9vw,120px) 0}
 h2.title{font-size:clamp(30px,4.6vw,54px);font-weight:900;line-height:1.25;margin:0 0 18px;letter-spacing:.04em}
 h2.title .gold{color:var(--gold)}
 .lede{color:var(--ink2);font-size:clamp(15px,1.6vw,18px);max-width:46em;margin:0}
+/* emphasis dots (著重號) under 不套模板 in the cases lede: one filled dot centred under each of the four glyphs, in the text's own colour */
+.lede .emdot{-webkit-text-emphasis-style:filled circle;-webkit-text-emphasis-position:under;text-emphasis-style:filled circle;text-emphasis-position:under}
 .hairline{width:64px;height:1px;background:var(--gold);margin:26px 0 0}
 .rv{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
 .rv.in{opacity:1;transform:none}
@@ -79,6 +81,11 @@ body{padding-bottom:56px}
 .why .five div{border-left:1px solid var(--gold);padding-left:14px}
 .why .five b{display:block;font-family:var(--en);font-weight:500;letter-spacing:.18em;font-size:12px;color:var(--gold2);margin-bottom:6px}
 .why .five span{font-size:15px;font-weight:500}
+/* the five points cascade: once TEAM is in (one scroll after the title, on the earlier line set by fiveIO below), the remaining four follow automatically at a steady beat instead of waiting for a fresh scroll each — their transition delays do the sequencing */
+.why .five>div:nth-child(2){transition-delay:.18s}
+.why .five>div:nth-child(3){transition-delay:.36s}
+.why .five>div:nth-child(4){transition-delay:.54s}
+.why .five>div:nth-child(5){transition-delay:.72s}
 /* offices — restored to the original slide: three full-height city panels, English names centred over the translucent mask band, LOCATION block bottom-left */
 .offices{padding:0;background:#0b0805}
 .cityfull{position:relative;display:grid;grid-template-columns:1.55fr .8fr .8fr;gap:6px}
@@ -113,6 +120,12 @@ body{padding-bottom:56px}
 .pin.major i{width:12px;height:12px;background:var(--gold);box-shadow:0 0 0 5px rgba(201,168,106,.28)}
 .pin em{font-style:normal;font-size:12px;letter-spacing:.16em;color:var(--gold2);text-shadow:0 1px 8px rgba(0,0,0,.95);font-weight:500}
 .mapstats{display:flex;gap:clamp(24px,5vw,64px);margin-top:34px;flex-wrap:wrap}
+/* the three stats no longer wait for their own scroll trigger: mapIO adds .in to the band shortly after the map settles and the pins start dropping, and the three figures then rise one after another */
+.mapstats>div{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.mapstats.in>div{opacity:1;transform:none}
+.mapstats.in>div:nth-child(2){transition-delay:.22s}
+.mapstats.in>div:nth-child(3){transition-delay:.44s}
+@media (prefers-reduced-motion:reduce){.mapstats>div{opacity:1;transform:none;transition:none}}
 .mapstats div b{font-family:var(--en);font-size:clamp(30px,4vw,46px);font-weight:600;color:var(--gold2);display:block;line-height:1.1}
 .mapstats div span{color:var(--ink3);font-size:13px;letter-spacing:.2em}
 /* services */
@@ -145,8 +158,7 @@ body{padding-bottom:56px}
 }
 /* founders — original slide composition: portrait centre overlapping the big name, bio block at the side, Chinese name + titles at the bottom corner. The section carries no bottom padding, so the last portrait's lower edge lands exactly on the section's bottom edge, as on the slide. */
 #founders{padding-bottom:0}
-.founder{position:relative;padding:clamp(40px,5vw,64px) 0 clamp(48px,5vw,72px);border-top:1px solid var(--line);min-height:clamp(680px,96vh,920px)}
-.founder:first-of-type{border-top:none}
+.founder{position:relative;padding:clamp(40px,5vw,64px) 0 clamp(48px,5vw,72px);border-bottom:1px solid var(--line);min-height:clamp(680px,96vh,920px)}
 .founder .photo{position:absolute;left:28.5%;bottom:0;height:94%;z-index:3;opacity:0;transition:opacity 1s ease .2s}
 .founder.in .photo{opacity:1}
 .founder .photo img{height:100%;width:auto;filter:drop-shadow(0 22px 34px rgba(0,0,0,.6)) contrast(1.03)}
@@ -203,6 +215,8 @@ body{padding-bottom:56px}
 .no-mark::after{transform:translate(-50%,-50%) rotate(-45deg)}
 /* the three crosses pop in one by one, shrinking from 1.8x to size with a damped settle — "look here" */
 .pain-item.in .no-mark{animation:noPop .8s cubic-bezier(.34,1.35,.64,1) both}
+.pain-list .pain-item:nth-child(2){transition-delay:.25s}
+.pain-list .pain-item:nth-child(3){transition-delay:.5s}
 .pain-list .pain-item:nth-child(2) .no-mark{animation-delay:.15s}
 .pain-list .pain-item:nth-child(3) .no-mark{animation-delay:.3s}
 @keyframes noPop{from{opacity:0;transform:rotate(-8deg) scale(1.8)}to{opacity:1;transform:rotate(-8deg) scale(1)}}
@@ -303,9 +317,9 @@ body{padding-bottom:56px}
 /* the golden line is the set piece, and it closes the whole intro before the cases begin: it must not start until the band itself is fully on screen (quoteCheck in the script waits for exactly that), then a short held beat, then the drop itself at a slower pace than before — type starts larger than the page, shrinks fast, then settles slowly into place; only once it has landed does the photo fade in */
 .quote-band .q.rv{opacity:1;transform:none;transition:none}
 .quote-band .q p{opacity:0;transform-origin:12% 50%}
-.quote-band .q.in p{animation:quoteDrop 2.6s cubic-bezier(.16,1,.3,1) .45s both}
-@keyframes quoteDrop{0%{opacity:0;transform:scale(3.6)}38%{opacity:1;transform:scale(1.05)}62%{transform:scale(.992)}100%{opacity:1;transform:scale(1)}}
-.quote-band figure.rv{opacity:0;transform:none;transition:opacity 1.4s ease 2.3s}
+.quote-band .q.in p{animation:quoteDrop 2.2s cubic-bezier(.16,1,.3,1) .45s both;will-change:transform,opacity;backface-visibility:hidden}
+@keyframes quoteDrop{0%{opacity:0;transform:scale(3.6)}45%{opacity:1;transform:scale(1.03)}75%{transform:scale(1.004)}100%{opacity:1;transform:scale(1)}}
+.quote-band figure.rv{opacity:0;transform:none;transition:opacity 1.6s ease .45s}
 .quote-band figure.rv.in{opacity:1}
 @media (prefers-reduced-motion:reduce){.quote-band .q.in p{opacity:1;animation:none}.quote-band figure.rv{opacity:1;transition:none}}
 .quote-band .q p{font-size:clamp(24px,3.4vw,40px);font-weight:700;line-height:1.6;margin:0}
@@ -327,11 +341,10 @@ body{padding-bottom:56px}
 .case-head .desc{color:var(--ink2);max-width:34em;font-size:15.5px;margin:0}
 /* every case intro is set on one line at the user's word — the shared 34em cap kept stranding a few glyphs alone on a second line (Pangu's "的一案。", Tanzania's "痕跡。", Nantong's tail). All ten intros: no wrap, no width cap, and the size eases down with the viewport by a per-case divisor (--dn = the intro's glyph count + 1.5, set by the builder) so the whole line always fits at any width, phone included; wording untouched */
 .case-head .desc.one{white-space:nowrap;max-width:none;font-size:min(15.5px,calc((100vw - 56px)/var(--dn,39.5)))}
-/* cases section title: TA们的 rides at the case-name size (the case h3 clamp) in yellow-gold, and 私宅作品 itself grows to 1.8x the section-title size, same face and colour as before */
+/* cases section title: TA們的 rides at the case-name size (the case h3 clamp) in yellow-gold, and 私宅作品 itself grows to 1.8x the section-title size, same face and colour as before */
 .casestitle{display:flex;align-items:baseline;gap:.38em;flex-wrap:wrap}
 .casestitle .ta{font-size:clamp(26px,3.6vw,42px);color:var(--gold2)}
-/* why 们 never matched 的: 们 (U+4EEC) is a simplified-only glyph that Noto Sans TC does not contain — Google Fonts' TC subset for it advertises the codepoint in its unicode-range but the font file itself has no such glyph (verified against the served woff2, weights 400–900 alike), so 们 alone fell back to whatever CJK face the reader's system offered, in a different design and stroke weight from 的 beside it, while an earlier fix that merely boxed 们 to a 1em advance changed nothing the eye could see. Now 们 is taken from Noto Sans SC — the same Noto Sans design at the same weight, loaded above and also sitting behind TC in the stacks so every 们 in the body copy resolves the same way — and it is scaled horizontally to 的's own measure: in the served 900 faces, 的 (TC) inks 813 of its 1000-unit em while 们 (SC) inks 926, so 们 is set at 813/926 ≈ .88, which lands its ink at 815 ≈ 的's 813, centred in the same 1em advance */
-.casestitle .ta .men{display:inline-block;width:1em;text-align:center;font-family:'Noto Sans SC',sans-serif;transform:scaleX(.88)}
+/* why the title's 們 is the traditional glyph, not simplified 们: 们 (U+4EEC) is a simplified-only glyph that Noto Sans TC does not contain, so it could only ever be borrowed from another face (a system fallback, or Noto Sans SC squeezed scaleX(.88) to fake 的's measure) — and a borrowed glyph never matches: different drawing, different stroke-weight distribution from 的 beside it, which is exactly what the user kept circling. 們 (U+5011) lives in Noto Sans TC itself, the same face and 900 weight as 的 and as the 們 in the process title (他們是怎麼做這些事的), so TA們的 now renders in literally the one font — no span, no transform, nothing to drift. The page copy is traditional throughout and the user writes TA們的 themselves; the four TA们 in the process body copy stay as-is (small text, where the TC→SC stack fallback is invisible) */
 .casestitle .big{font-size:clamp(54px,8.28vw,97px)}
 /* Nantong's opening frame is a click-to-play video in the removed first photo's slot: its poster is the video's own first frame (the same street view the photo showed), an explicit gold play button sits centred on it, and the native controls take over once it plays — no autoplay */
 .cg figure.ntvid{position:relative;background:#000}
@@ -364,7 +377,7 @@ body{padding-bottom:56px}
 .cg figure.tz2{background:#e9e5de}
 .tz-base{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .tz-mag{position:absolute;left:2%;top:2.5%;width:31%;aspect-ratio:1;transform-origin:69.05% 50.77%;transform:translate(54%,134%) scale(.05);opacity:0;pointer-events:none;will-change:transform,opacity}
-.tz1.play .tz-mag{animation:tzMagPath 4.2s linear .25s both}
+.tz1.play .tz-mag{animation:tzMagPath 2.1s linear .25s both}
 @keyframes tzMagPath{
 0%{transform:translate(54%,134%) scale(.05);opacity:0}
 2.5%{transform:translate(54%,134%) scale(.055);opacity:.42}
@@ -537,6 +550,12 @@ body{padding-bottom:56px}
 .sysband{margin-top:42px;height:190px;border-radius:4px;background:url(assets/s18-1.jpg) center 62%/cover;opacity:.45;-webkit-mask-image:linear-gradient(180deg,transparent,#000 32%,#000 78%,transparent);mask-image:linear-gradient(180deg,transparent,#000 32%,#000 78%,transparent)}
 /* flows */
 .flowpct{display:flex;gap:8px;margin-top:38px;flex-wrap:wrap}
+/* service-flow layout: the six percentage chips move from the top row to a vertical rail on the left — each chip keeps the width it had in the row (a sixth of the content width), its height stretches with the page, and the big frame keeps its original height (the old full-width 7:4 height, recomputed from the content width) while its width gives up exactly the rail plus the gap. The zoom math in applyFlow reads clientWidth/clientHeight, so it follows untouched. On narrow screens the rail folds back above the frame. */
+.flow-layout{display:flex;gap:16px;align-items:stretch;margin-top:38px}
+.flow-layout .flowpct{flex-direction:column;flex-wrap:nowrap;flex:0 0 262px;width:262px;margin-top:0}
+.flow-layout .flowpct button{flex:1 1 0}
+.flow-layout .flow-frame{flex:1 1 auto;min-width:0;margin-top:0;aspect-ratio:auto;height:calc((min(1720px,100vw) - 2*clamp(18px,4vw,56px)) * 4 / 7)}
+@media(max-width:820px){.flow-layout{flex-direction:column}.flow-layout .flowpct{flex-direction:row;flex-wrap:wrap;flex:none;width:auto}.flow-layout .flowpct button{flex:1 1 130px}.flow-layout .flow-frame{height:auto;aspect-ratio:7/4;width:100%}}
 .flowpct button{flex:1 1 130px;background:var(--panel);border:1px solid var(--line);color:var(--ink2);border-radius:4px;padding:12px 10px;cursor:pointer;font-family:var(--sans);position:relative;min-height:66px;transition:transform .72s cubic-bezier(.16,1,.3,1),opacity .72s cubic-bezier(.16,1,.3,1),border-color .3s,background .3s}
 .flowpct button b{font-family:var(--en);font-size:25px;color:var(--gold2);display:block;line-height:1.1}
 .flowpct button span{font-size:12px;letter-spacing:.05em;display:block;margin-top:5px;line-height:1.5}
@@ -610,28 +629,28 @@ input[type=range]:focus-visible{outline:2px solid var(--gold-dim);outline-offset
 /* closing — the still layers rest at the video tail-frame composition (scale 1.01 about 50%/61%) and push from there to the end frame composed to the 52P reference (image-348); the interior-to-exterior move itself is carried by the video (see the handoff note below). The interior photo layer (lyr-room) is retired from the choreography: its through-the-window skyline is a different photograph from the skyline plate — measured China Zun top at 53.5% of frame height and 0.78× the plate tower's height — so the old mid-push dissolve could never register the two skylines and ghosted a double tower; it stays in the DOM at opacity 0 only. Layer order, back to front: the user's sky plate; the headline block — bold (600) black type stretched to ~96.7% of frame width with its glyph band at 35.8–49.8% of frame height, the gold TOWARDS IDEAL LIVING line tight beneath it; then the transparent skyline in its own stage IN FRONT of the type, pressing over wherever the two overlap (China Zun's top lands at ~37% of frame height, the top third stays clean sky); and on top of everything at the very bottom centre, the original FINENESS logo artwork (s52-2.png, wordmark + Chinese line, ~9% of frame width) — never typeset. The exterior layers push at different rates for parallax, and a slow drift keeps the end frame breathing */
 .closing{padding:0;min-height:100svh;display:flex;align-items:flex-start;justify-content:center;text-align:center;overflow:hidden}
 .closing .stage{position:absolute;inset:0;z-index:1;transform:scale(1.01);transform-origin:50% 61%}
-.closing.in .stage{transform:scale(1.45);transition:transform 7s cubic-bezier(.83,0,.17,1)}
+.closing.in .stage{transform:scale(1.45);transition:transform 5.5s linear}
 .closing .bldstage{position:absolute;inset:0;z-index:3;transform:scale(1.01);transform-origin:50% 61%}
-.closing.in .bldstage{transform:scale(1.45);transition:transform 7s cubic-bezier(.83,0,.17,1)}
+.closing.in .bldstage{transform:scale(1.45);transition:transform 5.5s linear}
 /* the drift stays parked while the push runs — two motions at once read as a judder; .live (added by the closing script the moment the push completes) starts the breathing from the parked scale(1), so it joins seamlessly */
 .closing .drift{position:absolute;inset:0;animation:none;transform:scale(1)}
 @keyframes closingDrift{from{transform:scale(1)}to{transform:scale(1.035)}}
 .closing .stage .lyr,.closing .bldstage .lyr{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .closing .stage .lyr-sky{z-index:1}
-.closing.in .stage .lyr-sky{transform:scale(1.05);transition:transform 7s cubic-bezier(.83,0,.17,1)}
+.closing.in .stage .lyr-sky{transform:scale(1.05);transition:transform 5.5s linear}
 .closing .bldstage .lyr-bld{z-index:1}
-.closing.in .bldstage .lyr-bld{transform:translateY(1.4%) scale(1.13);transition:transform 7s cubic-bezier(.83,0,.17,1)}
+.closing.in .bldstage .lyr-bld{transform:translateY(1.4%) scale(1.13);transition:transform 5.5s linear}
 .closing .bldstage .lyr-room{z-index:2;opacity:0}
 .closing .shade{position:absolute;inset:0;z-index:4;background:linear-gradient(180deg,rgba(255,255,255,.30),rgba(255,255,255,0) 42%,rgba(24,19,12,.20));pointer-events:none}
-.closing .inner{position:relative;z-index:2;width:100%;padding:35vh 0 60px;opacity:0;transform:translateY(24px) scale(.985);transition:opacity 4.6s cubic-bezier(.83,0,.17,1) .3s,transform 4.6s cubic-bezier(.83,0,.17,1) .3s}
+.closing .inner{position:relative;z-index:2;width:100%;padding:35vh 0 60px;opacity:0;transform:translateY(24px) scale(.985);transition:opacity 4.9s linear .3s,transform 4.9s linear .3s}
 .closing.in .inner{opacity:1;transform:none}
 .closing h2{font-family:var(--sans);font-size:min(8.2vw,14.4vh);font-weight:600;letter-spacing:.08em;white-space:nowrap;line-height:1.04;margin:0;color:#666}
 .closing .en2{font-family:var(--en);letter-spacing:.48em;margin:.7vh 0 0 .24em;color:#b08d57;font-size:clamp(13px,1.75vw,24px);font-weight:400;text-transform:uppercase}
-.closing .finisher{position:absolute;left:50%;bottom:2.8%;transform:translateX(-50%);z-index:6;text-align:center;opacity:0;transition:opacity 4.6s cubic-bezier(.83,0,.17,1) 1s;pointer-events:none}
+.closing .finisher{position:absolute;left:50%;bottom:2.8%;transform:translateX(-50%);z-index:6;text-align:center;opacity:0;transition:opacity 4.9s linear .5s;pointer-events:none}
 .closing.in .finisher{opacity:1}
 /* the finisher is the user's white transparent logo artwork (never typeset), bottom centre at ~9% of frame width. It is NOT sandwiched under the buildings: the building plate measures 99.6% fully opaque across the logo's band (x 45–55%, y 88–100%), so a logo between sky and buildings would be covered completely — it therefore rides on top of the buildings, with a soft edge shadow to lift the white lettering off the plate */
 .closing .finisher img{width:clamp(88px,9.2vw,240px);height:auto;filter:drop-shadow(0 1px 5px rgba(8,10,18,.5)) drop-shadow(0 0 14px rgba(8,10,18,.28))}
-/* closing video handoff — on entry the user's muted 3.8s push video (1920×1080, has an AAC track so it is force-muted in JS as well) plays first, over still layers held exactly at the video's actual tail frame: skyline stages at scale(1.01) about origin 50%/61%, the room layer retired (opacity 0 in every state), the drift parked at scale(1) so nothing breathes mid-handoff, headline and logo held invisible. The hold was re-measured from the rendered page on 2026-11-19 (the earlier phase-correlation claim was re-checked, not trusted): video paused on its last frame vs the held stills, at 1600×900 and at 1877×1152, phase correlation offset (0,0) and skyline-band luminance NCC 0.97 both times — the stills and the tail frame register. When the video ends it crossfades out (.45s) and the stills continue from that hold to the composed end frame while the headline, the gold line and the white logo fade in on the web layer (the video itself carries no text). Scrolling away strips every state class, so on return the video replays from the top and hands off again. If the video cannot load or play, .vidmode is never added (or is dropped by the watchdog) and io3's .in runs the same skyline push from the same tail composition on the stills alone — it no longer opens on the interior photo, whose window skyline cannot register with the skyline plate (see the closing note above) and ghosted a second China Zun over the plate's. */
+/* closing video handoff — on entry the user's muted 3.8s push video (1920×1080, has an AAC track so it is force-muted in JS as well) plays first, over still layers held exactly at the video's actual tail frame: skyline stages at scale(1.01) about origin 50%/61%, the room layer retired (opacity 0 in every state), the drift parked at scale(1) so nothing breathes mid-handoff, headline and logo held invisible. The hold was re-measured from the rendered page on 2026-11-19 (the earlier phase-correlation claim was re-checked, not trusted): video paused on its last frame vs the held stills, at 1600×900 and at 1877×1152, phase correlation offset (0,0) and skyline-band luminance NCC 0.97 both times — the stills and the tail frame register. The handoff fires early — at video-time 3.25s of 3.8s, on timeupdate — so the video crossfades out (.4s linear) across its own still-moving last frames while the stills continue from that hold to the composed end frame, and the headline, the gold line and the white logo fade in on the web layer (the video itself carries no text); there is no stopped tail frame at the join. Scrolling away strips every state class, so on return the video replays from the top and hands off again. If the video cannot load or play, .vidmode is never added (or is dropped by the watchdog) and io3's .in runs the same skyline push from the same tail composition on the stills alone — it no longer opens on the interior photo, whose window skyline cannot register with the skyline plate (see the closing note above) and ghosted a second China Zun over the plate's. */
 .zjcraft{display:flex;flex-direction:column}
 .zjcraft .zjg{display:grid;grid-template-columns:.92fr 1.06fr 1fr;grid-template-rows:37% 63%;gap:10px;aspect-ratio:1.41;flex:none}
 .zjcraft .zjg img{width:100%;height:100%;object-fit:cover;display:block;border-radius:3px}
@@ -713,7 +732,7 @@ input[type=range]:focus-visible{outline:2px solid var(--gold-dim);outline-offset
 .dyrow{display:flex;gap:12px;justify-content:center}
 .cg .dyrow img{height:min(470px,54vh);width:auto;border:1px solid rgba(201,168,106,.16);border-radius:4px}
 @media(max-width:820px){.cg .dyrow img{height:auto;width:calc(50% - 6px)}}
-.closing .vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:5;opacity:1;transition:opacity .45s ease;pointer-events:none}
+.closing .vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:5;opacity:1;transition:opacity .4s linear;pointer-events:none}
 .closing:not(.vidmode) .vid{display:none}
 .closing.handed .vid{opacity:0}
 .closing.vidmode .drift{animation:none;transform:scale(1)}
@@ -725,13 +744,15 @@ input[type=range]:focus-visible{outline:2px solid var(--gold-dim);outline-offset
 .closing.vidmode .bldstage .lyr-room{opacity:0;transition:none}
 .closing.vidmode .inner{opacity:0;transform:translateY(24px) scale(.985);transition:none}
 .closing.vidmode .finisher{opacity:0;transition:none}
-/* one push, one curve: every layer rides the same 7s cubic-bezier(.83,0,.17,1) with no delay and no second motion underneath — the old build froze the stills for .25s while the video faded, ran the handoff push at 6.5s against the fallback's 7s, and let the 18s drift run concurrently in the fallback, and the joins read as a judder. The curve starts and ends at near-zero velocity, so the push leaves the video's resting tail frame imperceptibly and settles the same way; the headline and logo surface on the same curve over 4.6s instead of popping in on their own delays */
-.closing.handed .stage{transform:scale(1.45);transition:transform 7s cubic-bezier(.83,0,.17,1)}
-.closing.handed .bldstage{transform:scale(1.45);transition:transform 7s cubic-bezier(.83,0,.17,1)}
-.closing.handed .stage .lyr-sky{transform:scale(1.05);transition:transform 7s cubic-bezier(.83,0,.17,1)}
-.closing.handed .bldstage .lyr-bld{transform:translateY(1.4%) scale(1.13);transition:transform 7s cubic-bezier(.83,0,.17,1)}
-.closing.handed .inner,.closing.in:not(.vidmode) .inner{opacity:1;transform:none;transition:opacity 4.6s cubic-bezier(.83,0,.17,1) .3s,transform 4.6s cubic-bezier(.83,0,.17,1) .3s}
-.closing.handed .finisher,.closing.in:not(.vidmode) .finisher{opacity:1;transition:opacity 4.6s cubic-bezier(.83,0,.17,1) 1s}
+/* one timeline, one speed: everything after the handoff is linear — no ease ramp, no dwell. Budget, closing start → settled: the 3.8s clip plays at 1.35x and hands off early, at video-time 3.25s (≈2.4s in, triggered on timeupdate, not on 'ended', so the stills start moving while the video is still playing its last frames and the two overlap through the .4s linear crossfade — no frozen tail frame at the join); the stills then push 2.9s linear (done ≈5.3s), the headline fades/rises 2.7s linear from the handoff (settled ≈5.1s) and the logo 2.7s linear +.15s (≈5.3s). The stills-only fallback runs the same shape on its own clock: 5.5s linear push, headline settled ≈5.2s (4.9s linear +.3s). Both paths land the whole closing inside 5–6s */
+.closing.handed .stage{transform:scale(1.45);transition:transform 2.9s linear}
+.closing.handed .bldstage{transform:scale(1.45);transition:transform 2.9s linear}
+.closing.handed .stage .lyr-sky{transform:scale(1.05);transition:transform 2.9s linear}
+.closing.handed .bldstage .lyr-bld{transform:translateY(1.4%) scale(1.13);transition:transform 2.9s linear}
+.closing.handed .inner{opacity:1;transform:none;transition:opacity 2.7s linear,transform 2.7s linear}
+.closing.in:not(.vidmode) .inner{opacity:1;transform:none;transition:opacity 4.9s linear .3s,transform 4.9s linear .3s}
+.closing.handed .finisher{opacity:1;transition:opacity 2.7s linear .15s}
+.closing.in:not(.vidmode) .finisher{opacity:1;transition:opacity 4.9s linear .5s}
 .closing.live .drift{animation:closingDrift 18s ease-in-out infinite alternate}
 @media (prefers-reduced-motion:reduce){.closing .stage{transform:scale(1.3)}.closing .bldstage{transform:scale(1.3)}.closing.in .stage,.closing.in .bldstage{transition:none}.closing .drift{animation:none}.closing .stage .lyr,.closing .bldstage .lyr{transition:none}.closing .stage .lyr-sky{transform:scale(1.05)}.closing .bldstage .lyr-bld{transform:translateY(1.4%) scale(1.13)}.closing .bldstage .lyr-room{display:none}.closing .inner{opacity:1;transform:none;transition:none}.closing .finisher{opacity:1;transition:none}}
 footer{padding:26px 0 10px;text-align:center;color:var(--ink3);font-size:12px;letter-spacing:.2em}
@@ -960,7 +981,7 @@ footer{padding:26px 0 10px;text-align:center;color:var(--ink3);font-size:12px;le
         <div class="no">2-3<small>全案設計階段 · 續</small></div>
         <div><h3>節點圖紙 — <span class="goldline">每一個節點都清晰可見</span></h3>
         <p>建築結構改造、專業水電系統和裝飾施工等層面的圖紙，完整配合不斷層，只為完美交付這一個結果。</p></div>
-        <figure class="stripfull"><img src="assets/s15-composite.jpg" alt="節點圖紙四格拼圖：施工圖冊翻頁、硬裝物料單、混凝土連接節點圖、機電分層軸測圖" loading="lazy"></figure>
+        <figure class="stripfull"><img src="assets/s15-composite.png" alt="節點圖紙四格拼圖：施工圖冊翻頁、硬裝物料單、混凝土連接節點圖、機電分層軸測圖" loading="lazy"></figure>
       </div>
       <div class="step rv">
         <div class="no">03<small>施工準備階段</small></div>
@@ -979,7 +1000,7 @@ footer{padding:26px 0 10px;text-align:center;color:var(--ink3);font-size:12px;le
         <div class="no">04<small>落地階段</small></div>
         <div><h3>全案跟進</h3>
         <p>TA们很親和，別把他當大師，而是一起築巢的好伙伴。</p></div>
-        <figure class="stripfull"><img src="assets/s17-composite.jpg" alt="落地跟進拼圖：施工現場照片與客戶在微信中給予的真實好評截圖" loading="lazy"></figure>
+        <figure class="stripfull"><img src="assets/s17-composite.png" alt="落地跟進拼圖：施工現場照片與客戶在微信中給予的真實好評截圖" loading="lazy"></figure>
       </div>
     </div>
   </div>
@@ -1019,8 +1040,8 @@ footer{padding:26px 0 10px;text-align:center;color:var(--ink3);font-size:12px;le
 <section id="cases" style="padding-bottom:20px">
   <div class="wrap">
     <p class="kicker rv">Case Show · Residence Space</p>
-    <h2 class="title rv casestitle"><span class="ta">TA<span class="men">们</span>的</span><span class="big">私宅作品</span></h2>
-    <p class="lede rv">不套模板，所以不專注某種風格。十個項目，十種生活。</p>
+    <h2 class="title rv casestitle"><span class="ta">TA們的</span><span class="big">私宅作品</span></h2>
+    <p class="lede rv"><span class="emdot">不套模板</span>，所以不專注某種風格。</p>
   </div>
 </section>
 <div class="wrap" id="casewrap"></div>
@@ -1042,8 +1063,9 @@ footer{padding:26px 0 10px;text-align:center;color:var(--ink3);font-size:12px;le
     <p class="kicker rv">Full Category Service Flow</p>
     <h2 class="title rv">全品類服務流程</h2>
     <p class="lede rv">九個節點走完一個家。收費節點寫在明處：第一筆 35%，開工前累計收至 90%，開工後兩筆各 5%，合計 100%。</p>
+    <div class="flow-layout">
     <div class="flowpct rv" id="flowpct" role="tablist" aria-label="收費節點百分比"></div>
-    <div class="flow-frame rv" id="flowscroll"><div class="flow-strip" id="flowstrip" role="img" aria-label="全品類服務流程原稿長圖（透明底，疊放於深色底上）"><img data-s="0" src="assets/s49-p01.png" alt="" aria-hidden="true" loading="lazy" style="left:0%;top:0%;width:23.49%"><img data-s="1" src="assets/s49-p02.png" alt="" aria-hidden="true" loading="lazy" style="left:23.49%;top:0%;width:18.206%"><img data-s="1" src="assets/s49-p03.png" alt="" aria-hidden="true" loading="lazy" style="left:23.49%;top:41.734%;width:10.502%"><img data-s="2" src="assets/s49-p04.png" alt="" aria-hidden="true" loading="lazy" style="left:41.696%;top:0%;width:2.709%"><img data-s="2" src="assets/s49-p05.png" alt="" aria-hidden="true" loading="lazy" style="left:33.992%;top:41.734%;width:10.413%"><img data-s="3" src="assets/s49-p06.png" alt="" aria-hidden="true" loading="lazy" style="left:44.405%;top:0%;width:10.591%"><img data-s="3" src="assets/s49-p07.png" alt="" aria-hidden="true" loading="lazy" style="left:44.405%;top:27.958%;width:9.902%"><img data-s="4" src="assets/s49-p08.png" alt="" aria-hidden="true" loading="lazy" style="left:54.996%;top:0%;width:27.82%"><img data-s="5" src="assets/s49-p09.png" alt="" aria-hidden="true" loading="lazy" style="left:82.815%;top:0%;width:17.185%"><img data-s="4" src="assets/s49-p10.png" alt="" aria-hidden="true" loading="lazy" style="left:54.307%;top:27.958%;width:28.508%"><img data-s="5" src="assets/s49-p11.png" alt="" aria-hidden="true" loading="lazy" style="left:82.815%;top:27.958%;width:17.185%"><img data-s="4" src="assets/s49-p12.png" alt="" aria-hidden="true" loading="lazy" style="left:54.307%;top:41.734%;width:21.514%"><img data-s="5" src="assets/s49-p13.png" alt="" aria-hidden="true" loading="lazy" style="left:75.821%;top:41.734%;width:24.179%"><img data-s="4" src="assets/s49-p14.png" alt="" aria-hidden="true" loading="lazy" style="left:54.307%;top:51.864%;width:28.264%"><img data-s="5" src="assets/s49-p15.png" alt="" aria-hidden="true" loading="lazy" style="left:82.571%;top:51.864%;width:17.429%"></div></div>
+    <div class="flow-frame rv" id="flowscroll"><div class="flow-strip" id="flowstrip" role="img" aria-label="全品類服務流程原稿長圖（透明底，疊放於深色底上）"><img data-s="0" src="assets/s49-p01.png" alt="" aria-hidden="true" loading="lazy" style="left:0%;top:0%;width:23.49%"><img data-s="1" src="assets/s49-p02.png" alt="" aria-hidden="true" loading="lazy" style="left:23.49%;top:0%;width:18.206%"><img data-s="1" src="assets/s49-p03.png" alt="" aria-hidden="true" loading="lazy" style="left:23.49%;top:41.734%;width:10.502%"><img data-s="2" src="assets/s49-p04.png" alt="" aria-hidden="true" loading="lazy" style="left:41.696%;top:0%;width:2.709%"><img data-s="2" src="assets/s49-p05.png" alt="" aria-hidden="true" loading="lazy" style="left:33.992%;top:41.734%;width:10.413%"><img data-s="3" src="assets/s49-p06.png" alt="" aria-hidden="true" loading="lazy" style="left:44.405%;top:0%;width:10.591%"><img data-s="3" src="assets/s49-p07.png" alt="" aria-hidden="true" loading="lazy" style="left:44.405%;top:27.958%;width:9.902%"><img data-s="4" src="assets/s49-p08.png" alt="" aria-hidden="true" loading="lazy" style="left:54.996%;top:0%;width:27.82%"><img data-s="5" src="assets/s49-p09.png" alt="" aria-hidden="true" loading="lazy" style="left:82.815%;top:0%;width:17.185%"><img data-s="4" src="assets/s49-p10.png" alt="" aria-hidden="true" loading="lazy" style="left:54.307%;top:27.958%;width:28.508%"><img data-s="5" src="assets/s49-p11.png" alt="" aria-hidden="true" loading="lazy" style="left:82.815%;top:27.958%;width:17.185%"><img data-s="4" src="assets/s49-p12.png" alt="" aria-hidden="true" loading="lazy" style="left:54.307%;top:41.734%;width:21.514%"><img data-s="5" src="assets/s49-p13.png" alt="" aria-hidden="true" loading="lazy" style="left:75.821%;top:41.734%;width:24.179%"><img data-s="4" src="assets/s49-p14.png" alt="" aria-hidden="true" loading="lazy" style="left:54.307%;top:51.864%;width:28.264%"><img data-s="5" src="assets/s49-p15.png" alt="" aria-hidden="true" loading="lazy" style="left:82.571%;top:51.864%;width:17.429%"></div></div></div>
   </div>
 </section>
 
@@ -1146,7 +1168,29 @@ footer{padding:26px 0 10px;text-align:center;color:var(--ink3);font-size:12px;le
 var ioSticky='#striprow,#dimtabs,#flowpct,#flowscroll,#dflow'; /* containers holding buttons/tabs stay revealed once shown, so their controls are never left transparent off-screen; every presentational entrance still replays */
 var io=new IntersectionObserver(function(es){es.forEach(function(e){var t=e.target;if(t.matches(ioSticky)){if(e.isIntersecting){t.classList.add('in');io.unobserve(t);}}else if(e.isIntersecting){t.classList.add('in');}});},{threshold:0,rootMargin:'0px 0px -50% 0px'});
 var ioOut=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting&&!e.target.matches(ioSticky))e.target.classList.remove('in');});},{threshold:0});
-document.querySelectorAll('.rv').forEach(function(el){if(el.matches('#how .step,.founder,.sysgrid .frame,.syslist,.quote-band .q,.quote-band figure'))return;io.observe(el);ioOut.observe(el);});
+document.querySelectorAll('.rv').forEach(function(el){if(el.matches('#how .step,.founder,.sysgrid .frame,.syslist,.quote-band .q,.quote-band figure,.why .five>div,.pain-item,.fear-head,#world .rv,#now .rv,#strippanel'))return;io.observe(el);ioOut.observe(el);});
+/* earlier-line reveals — the world-map page (item: title a touch earlier, the map following with the same gap as before) and the pit-avoidance page (all its text a touch earlier) leave the general midpoint rule for a line 12% higher up the viewport; replay removal still runs through ioOut */
+var earlyIO=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in');});},{threshold:0,rootMargin:'0px 0px -38% 0px'});
+document.querySelectorAll('#world .rv:not(.mapstats),#now .rv').forEach(function(el){earlyIO.observe(el);ioOut.observe(el);});
+/* why page: TEAM used to need three scrolls after the title — it now fires on the -28% line (one scroll after the title), and the other four points are added in the same moment, their CSS transition delays cascading them in one after another instead of waiting for further scrolls. Leaving the viewport resets all five, so the cascade replays on return */
+var fiveEl=document.querySelector('.why .five');
+if(fiveEl){var fiveItems=fiveEl.querySelectorAll('div');
+  var fiveIO=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)fiveItems.forEach(function(d){d.classList.add('in');});});},{threshold:0,rootMargin:'0px 0px -28% 0px'});
+  var fiveOut=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)fiveItems.forEach(function(d){d.classList.remove('in');});});},{threshold:0});
+  fiveIO.observe(fiveEl);fiveOut.observe(fiveEl);}
+/* pain page: the fear headline used to need six scrolls after the photo — it now fires on the -28% line (one scroll after the photo). The first pain item keeps the old midpoint line (one scroll after the headline, as before), and items two and three are added with it, cascading in on their CSS delays instead of waiting for more scrolls while the next page arrives */
+var fearEl=document.querySelector('.fear-head');
+if(fearEl){var fearIO=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)fearEl.classList.add('in');});},{threshold:0,rootMargin:'0px 0px -28% 0px'});
+  var fearOut=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)fearEl.classList.remove('in');});},{threshold:0});
+  fearIO.observe(fearEl);fearOut.observe(fearEl);}
+var painList=document.querySelector('.pain-list');
+if(painList){var painItems=painList.querySelectorAll('.pain-item');
+  var painIO=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)painItems.forEach(function(d){d.classList.add('in');});});},{threshold:0,rootMargin:'0px 0px -50% 0px'});
+  var painOut=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)painItems.forEach(function(d){d.classList.remove('in');});});},{threshold:0});
+  painIO.observe(painItems[0]);painOut.observe(painList);}
+/* services page: the bottom panel used to wait for its own midpoint crossing, long after the strip above it — it now fires on the -30% line, following the strip in promptly */
+var spEl=document.getElementById('strippanel');
+if(spEl){var spIO=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)spEl.classList.add('in');});},{threshold:0,rootMargin:'0px 0px -30% 0px'});spIO.observe(spEl);ioOut.observe(spEl);}
 /* how-steps: no pre-fire margin at all, and a step must be a solid half on screen before its photo entrances start; leaving the viewport resets them, so they replay on return */
 var stepIO=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('in',e.isIntersecting);});},{threshold:.5});
 document.querySelectorAll('#how .step').forEach(function(el){stepIO.observe(el);});
@@ -1189,7 +1233,7 @@ function quoteCheck(){
   var h=r.height||1;
   var vis=Math.min(r.bottom,vh)-Math.max(r.top,0);
   if(vis<0)vis=0;
-  if(vis>=.97*Math.min(h,vh)&&r.top>=-.03*h){quoteQ.classList.add('in');if(quoteFig)quoteFig.classList.add('in');}
+  if(vis>=.55*Math.min(h,vh)&&r.top>=-.03*h){quoteQ.classList.add('in');if(quoteFig)quoteFig.classList.add('in');}
 }
 addEventListener('scroll',quoteCheck,{passive:true});
 addEventListener('resize',quoteCheck);
@@ -1211,8 +1255,9 @@ var mapPlayed=false;
 var mapIO=new IntersectionObserver(function(es){es.forEach(function(e){
   if(e.isIntersecting){if(mapPlayed)return;mapPlayed=true;
     var wrap=e.target.querySelector('.mapwrap');if(wrap)wrap.classList.add('settle');
-    pinEls.forEach(function(el,i){var d=i===0?650:(i<5?650+i*190:1750+(i-5)*60);setTimeout(function(){el.classList.add('on');},d);});}
-  else if(mapPlayed&&!matchMedia('(prefers-reduced-motion: reduce)').matches){mapPlayed=false;var w2=e.target.querySelector('.mapwrap');if(w2)w2.classList.remove('settle');pinEls.forEach(function(el){el.classList.remove('on');});}
+    pinEls.forEach(function(el,i){var d=i===0?650:(i<5?650+i*190:1750+(i-5)*60);setTimeout(function(){el.classList.add('on');},d);});
+    setTimeout(function(){var ms=document.querySelector('.mapstats');if(ms)ms.classList.add('in');},1400);}
+  else if(mapPlayed&&!matchMedia('(prefers-reduced-motion: reduce)').matches){mapPlayed=false;var w2=e.target.querySelector('.mapwrap');if(w2)w2.classList.remove('settle');pinEls.forEach(function(el){el.classList.remove('on');});var ms3=document.querySelector('.mapstats');if(ms3)ms3.classList.remove('in');}
 });},{threshold:.5});
 var mapBoxEl=document.querySelector('.mapbox');if(mapBoxEl)mapIO.observe(mapBoxEl);
 if(matchMedia('(prefers-reduced-motion: reduce)').matches){pinEls.forEach(function(el){el.classList.add('on');});var mw=document.querySelector('.mapwrap');if(mw)mw.classList.add('settle');}
@@ -1238,24 +1283,30 @@ if(coverVid){
 var closingSec=document.querySelector('.closing'),cVid=document.getElementById('closingvid'),cVidOK=!!cVid,cLiveTimer=null,cWatchdog=null;
 if(cVid){
   cVid.addEventListener('error',function(){cVidOK=false;closingSec.classList.remove('vidmode','handed','live');},true);
-  cVid.addEventListener('ended',function(){
-    if(!closingSec.classList.contains('vidmode'))return;
+  function cHandoff(){
+    if(!closingSec.classList.contains('vidmode')||closingSec.classList.contains('handed'))return;
     closingSec.classList.add('handed');
-    cLiveTimer=setTimeout(function(){closingSec.classList.add('live');},7000);
+    clearTimeout(cLiveTimer);
+    cLiveTimer=setTimeout(function(){closingSec.classList.add('live');},2900);
+  }
+  /* overlap handoff: take over 0.55s of video time BEFORE the clip ends, while it is still moving — the video fades out over .4s linear across its own last frames as the stills start pushing, so there is no frozen tail frame and no dwell at the join; 'ended' remains only as a backstop */
+  cVid.addEventListener('timeupdate',function(){
+    if(cVid.duration&&cVid.currentTime>=cVid.duration-.55)cHandoff();
   });
+  cVid.addEventListener('ended',cHandoff);
   var cIO=new IntersectionObserver(function(es){es.forEach(function(e){
     if(e.isIntersecting){
       if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-      if(!cVidOK){/* stills-only fallback: io3's .in runs the same 7s push; the drift joins only once it completes, never alongside it */
+      if(!cVidOK){/* stills-only fallback: io3's .in runs the same 5.5s linear push; the drift joins only once it completes, never alongside it */
         clearTimeout(cLiveTimer);
-        cLiveTimer=setTimeout(function(){closingSec.classList.add('live');},7000);
+        cLiveTimer=setTimeout(function(){closingSec.classList.add('live');},5500);
         return;}
       closingSec.classList.add('vidmode');closingSec.classList.remove('handed','live');
-      cVid.muted=true;
+      cVid.muted=true;cVid.playbackRate=1.35;/* measured budget, closing start → headline settled ≈5.1s, everything done ≈5.3s: the 3.8s clip at 1.35x hands off at video-time 3.25s (≈2.4s in, see the timeupdate trigger above), the stills push on at a constant linear speed (2.9s, see the .handed rules) and the headline fades in linearly over 2.7s from the handoff — no ease ramp anywhere, no dwell at the join */
       try{cVid.currentTime=0;}catch(err){}
-      var pr=cVid.play();if(pr&&pr.catch)pr.catch(function(){cVidOK=false;closingSec.classList.remove('vidmode','handed','live');clearTimeout(cLiveTimer);cLiveTimer=setTimeout(function(){closingSec.classList.add('live');},7000);});
+      var pr=cVid.play();if(pr&&pr.catch)pr.catch(function(){cVidOK=false;closingSec.classList.remove('vidmode','handed','live');clearTimeout(cLiveTimer);cLiveTimer=setTimeout(function(){closingSec.classList.add('live');},5500);});
       clearTimeout(cWatchdog);
-      cWatchdog=setTimeout(function(){if(closingSec.classList.contains('vidmode')&&!closingSec.classList.contains('handed')&&cVid.readyState<2&&cVid.currentTime<.1){cVidOK=false;closingSec.classList.remove('vidmode','handed','live');clearTimeout(cLiveTimer);cLiveTimer=setTimeout(function(){closingSec.classList.add('live');},7000);}},3000);
+      cWatchdog=setTimeout(function(){if(closingSec.classList.contains('vidmode')&&!closingSec.classList.contains('handed')&&cVid.readyState<2&&cVid.currentTime<.1){cVidOK=false;closingSec.classList.remove('vidmode','handed','live');clearTimeout(cLiveTimer);cLiveTimer=setTimeout(function(){closingSec.classList.add('live');},5500);}},3000);
     }else{
       closingSec.classList.remove('vidmode','handed','live');
       clearTimeout(cLiveTimer);clearTimeout(cWatchdog);
@@ -1306,7 +1357,7 @@ function setSvc(i){curSvc=i;row.querySelectorAll('.strip').forEach(function(el,j
 setSvc(0);
 
 /* cases — full restoration: all 95 placements from PPT pp.21-47; sizes follow the original layout (large = key, small = secondary); s32-3 is placed twice in the original (32P & 33P) and shown in both positions */
-var CASES=[{"name": "科特迪瓦總統府秘書長宅邸", "en": "CÔTE D’IVOIRE · 2016", "desc": "地中海式海景奢華：白牆、玻璃、海藍與陽光，酒店度假感最強的一組實景。", "serif": false, "imgs": [{"f": "s21-1.jpg", "ar": 1.791, "s": 12}, {"f": "s22-1.jpg", "ar": 1.862, "s": 12}, {"f": "s22-2.jpg", "ar": 1.08, "s": 5, "p": 1}, {"f": "ci-bath.jpg", "ar": 1.512, "s": 7, "p": 1}], "n": 4}, {"name": "坦桑尼亞海邊別墅項目", "en": "TANZANIA · 2024", "desc": "熱帶現代、與自然共生：以泳池為中心組織生活；手繪與軸測，是方案推敲的痕跡。", "serif": false, "custom": "tz", "imgs": [], "n": 2}, {"name": "北京九章別墅", "en": "BEIJING · 2025", "desc": "自然靜奢風：挑高大空間、旋轉樓梯、面園餐廳，厚重而克制。", "serif": false, "fix": 1, "jz": 1, "imgs": [{"f": "s27-1.jpg", "ar": 1.04, "s": 6}, {"f": "s27-3.jpg", "ar": 1.04, "s": 6}, {"f": "s27-2.jpg", "ar": 0.6, "s": 4, "p": 1}, {"f": "s28-1.jpg", "ar": 0.6, "s": 4, "p": 1}, {"f": "s28-2.jpg", "ar": 0.6, "s": 4, "p": 1}, {"f": "s28-3.jpg", "ar": 0.765, "s": 7, "p": 1}, {"f": "s28-4.jpg", "ar": 0.546, "s": 5, "p": 1}], "n": 7}, {"name": "江蘇南通別墅", "en": "NANTONG", "desc": "白色現代極簡獨棟。當地人拍發的短視頻，曾引出近兩千條評論——好房子，自己會說話。", "serif": false, "fix": 1, "nt": 1, "imgs": [{"f": "s29-1.jpg", "ar": 1.784, "s": 12}, {"f": "s30-1.jpg", "ar": 1.777, "s": 12}, {"f": "s30-2.jpg", "ar": 0.95, "s": 4, "p": 1}, {"f": "s30-3.jpg", "ar": 0.95, "s": 4, "p": 1}, {"f": "s30-4.jpg", "ar": 0.95, "s": 4, "p": 1}], "n": 8}, {"name": "北京天樾書院別墅", "en": "BEIJING · 2024", "desc": "淺米極簡、年輕家庭的宜居感：電競房、貓梯、車庫同框，是這一案最被記住的畫面。", "serif": false, "fix": 1, "grp": 1, "imgs": [{"f": "s32-1.jpg", "ar": 2.842, "s": 7, "p": 1}, {"f": "s33-4.jpg", "ar": 2.03, "s": 5, "p": 1}, {"f": "s33-5.jpg", "ar": 1.087, "s": 5, "p": 1}, {"f": "s34-1.jpg", "ar": 1.522, "s": 7, "p": 1}, {"f": "s34-3.png", "ar": 1, "s": 4, "a": 1, "p": 1}, {"f": "s34-2.jpg", "ar": 1.6, "s": 8, "p": 1}], "n": 10}, {"name": "北京碧海方舟別墅", "en": "BEIJING · 2022", "desc": "白色法式優雅：灰大理石、芥末黄與橙色點綴、弧形樓梯。", "serif": false, "fix": 1, "imgs": [{"f": "s35-1.jpg", "ar": 2.182, "s": 12}, {"f": "s36-1.jpg", "ar": 1.498, "s": 12}, {"f": "s36-2.jpg", "ar": 1.3, "s": 6, "p": 1}, {"f": "s36-3.jpg", "ar": 1.3, "s": 6, "p": 1}, {"f": "s37-1.jpg", "ar": 0.556, "s": 3, "p": 1}, {"f": "s37-2.jpg", "ar": 0.926, "s": 5, "p": 1}, {"f": "s37-3.jpg", "ar": 0.741, "s": 4, "p": 1}], "n": 7}, {"name": "北京望京府別墅", "en": "BEIJING · 2022", "desc": "淺灰現代極簡，加一面彩色石紋藝術牆，把克制與張力放在同一個空間裡。", "serif": false, "fix": 1, "imgs": [{"f": "s38-1.jpg", "ar": 1.55, "s": 12}, {"f": "s38-2.jpg", "ar": 2.072, "s": 12}, {"f": "s39-1.jpg", "ar": 2.319, "s": 12}, {"f": "s39-3.jpg", "ar": 1.493, "s": 12}], "n": 4}, {"name": "北京中國府別墅", "en": "BEIJING · 2022", "desc": "奶油法式加暖木田園：人字拼地板、藤編、書房——鬆弛感是設計出來的。", "serif": false, "imgs": [{"f": "s40-1.jpg", "ar": 0.823, "s": 6}, {"f": "s40-2.jpg", "ar": 0.842, "s": 6}, {"f": "s40-3.jpg", "ar": 0.823, "s": 6}, {"f": "s41-1.jpg", "ar": 0.765, "s": 6}, {"f": "s41-2.jpg", "ar": 0.765, "s": 6}, {"f": "s41-3.jpg", "ar": 0.765, "s": 6}], "n": 6}, {"name": "北京紫禁壹號院別墅", "en": "BEIJING · 2020", "desc": "金色歐式的極致奢華：雕花金欄杆、石材拼花、水晶吊燈；而工藝過程，是這一案的第二賣點。", "serif": false, "fix": 1, "craft": 1, "zj43": 1, "imgs": [{"f": "s42-1.jpg", "ar": 1.333, "s": 6, "p": 1}, {"f": "s42-2.jpg", "ar": 1.333, "s": 6, "p": 1}], "n": 12}, {"name": "北京盤古大觀七星公館", "en": "BEIJING · 2014", "desc": "深色中式古典奢華：藻井吊頂、格柵屏風、圓形金飾，全組案例中最「中式」的一案。", "serif": false, "one": 1, "pg": 1, "fix": 1, "imgs": [], "n": 10}];
+var CASES=[{"name": "科特迪瓦總統府秘書長宅邸", "en": "CÔTE D’IVOIRE · 2016", "desc": "地中海式海景奢華：白牆、玻璃、海藍與陽光，酒店度假感最強的一組實景。", "serif": false, "imgs": [{"f": "s21-1.jpg", "ar": 1.791, "s": 12}, {"f": "s22-1.jpg", "ar": 1.862, "s": 12}, {"f": "s22-2.jpg", "ar": 1.08, "s": 5, "p": 1}, {"f": "ci-bath.jpg", "ar": 1.512, "s": 7, "p": 1}], "n": 4}, {"name": "坦桑尼亞海邊別墅項目", "en": "TANZANIA · 2024", "desc": "熱帶現代、與自然共生：以泳池為中心組織生活；手繪與軸測，是方案推敲的痕跡。", "serif": false, "custom": "tz", "imgs": [], "n": 2}, {"name": "北京九章別墅", "en": "BEIJING · 2025", "desc": "自然靜奢風：挑高大空間、旋轉樓梯、面園餐廳，厚重而克制。", "serif": false, "fix": 1, "jz": 1, "imgs": [{"f": "s27-1.jpg", "ar": 1.04, "s": 6}, {"f": "s27-3.jpg", "ar": 1.04, "s": 6}, {"f": "s27-2.jpg", "ar": 0.6, "s": 4, "p": 1}, {"f": "s28-1.jpg", "ar": 0.6, "s": 4, "p": 1}, {"f": "s28-2.jpg", "ar": 0.6, "s": 4, "p": 1}, {"f": "s28-3.jpg", "ar": 0.765, "s": 7, "p": 1}, {"f": "s28-4.jpg", "ar": 0.546, "s": 5, "p": 1}], "n": 7}, {"name": "江苏南通自建别墅", "en": "NANTONG", "desc": "白色現代極簡獨棟。當地人拍發的短視頻，曾引出近兩千條評論——好房子，自己會說話。", "serif": false, "fix": 1, "nt": 1, "imgs": [{"f": "s29-1.jpg", "ar": 1.784, "s": 12}, {"f": "s30-1.jpg", "ar": 1.777, "s": 12}, {"f": "s30-2.jpg", "ar": 0.95, "s": 4, "p": 1}, {"f": "s30-3.jpg", "ar": 0.95, "s": 4, "p": 1}, {"f": "s30-4.jpg", "ar": 0.95, "s": 4, "p": 1}], "n": 8}, {"name": "北京天樾書院別墅", "en": "BEIJING · 2024", "desc": "淺米極簡、年輕家庭的宜居感：電競房、貓梯、車庫同框，是這一案最被記住的畫面。", "serif": false, "fix": 1, "grp": 1, "imgs": [{"f": "s32-1.jpg", "ar": 2.842, "s": 7, "p": 1}, {"f": "s33-4.jpg", "ar": 2.03, "s": 5, "p": 1}, {"f": "s33-5.jpg", "ar": 1.087, "s": 5, "p": 1}, {"f": "s34-1.jpg", "ar": 1.522, "s": 7, "p": 1}, {"f": "s34-3.png", "ar": 1, "s": 4, "a": 1, "p": 1}, {"f": "s34-2.jpg", "ar": 1.6, "s": 8, "p": 1}], "n": 10}, {"name": "北京碧海方舟別墅", "en": "BEIJING · 2022", "desc": "白色法式優雅：灰大理石、芥末黄與橙色點綴、弧形樓梯。", "serif": false, "fix": 1, "imgs": [{"f": "s35-1.jpg", "ar": 2.182, "s": 12}, {"f": "s36-1.jpg", "ar": 1.498, "s": 12}, {"f": "s36-2.jpg", "ar": 1.3, "s": 6, "p": 1}, {"f": "s36-3.jpg", "ar": 1.3, "s": 6, "p": 1}, {"f": "s37-1.jpg", "ar": 0.556, "s": 3, "p": 1}, {"f": "s37-2.jpg", "ar": 0.926, "s": 5, "p": 1}, {"f": "s37-3.jpg", "ar": 0.741, "s": 4, "p": 1}], "n": 7}, {"name": "北京望京府別墅", "en": "BEIJING · 2022", "desc": "淺灰現代極簡，加一面彩色石紋藝術牆，把克制與張力放在同一個空間裡。", "serif": false, "fix": 1, "imgs": [{"f": "s38-1.jpg", "ar": 1.55, "s": 12}, {"f": "s38-2.jpg", "ar": 2.072, "s": 12}, {"f": "s39-1.jpg", "ar": 2.319, "s": 12}, {"f": "s39-3.jpg", "ar": 1.493, "s": 12}], "n": 4}, {"name": "北京中國府別墅", "en": "BEIJING · 2022", "desc": "奶油法式加暖木田園：人字拼地板、藤編、書房——鬆弛感是設計出來的。", "serif": false, "imgs": [{"f": "s40-1.jpg", "ar": 0.823, "s": 6}, {"f": "s40-2.jpg", "ar": 0.842, "s": 6}, {"f": "s40-3.jpg", "ar": 0.823, "s": 6}, {"f": "s41-1.jpg", "ar": 0.823, "s": 6}, {"f": "s41-2.jpg", "ar": 0.765, "s": 6}, {"f": "s41-3.jpg", "ar": 0.765, "s": 6}], "n": 6}, {"name": "北京紫禁壹號院別墅", "en": "BEIJING · 2020", "desc": "金色歐式的極致奢華：雕花金欄杆、石材拼花、水晶吊燈；而工藝過程，是這一案的第二賣點。", "serif": false, "fix": 1, "craft": 1, "zj43": 1, "imgs": [{"f": "s42-1.jpg", "ar": 1.333, "s": 6, "p": 1}, {"f": "s42-2.jpg", "ar": 1.333, "s": 6, "p": 1}], "n": 12}, {"name": "北京盤古大觀七星公館大平层", "en": "BEIJING · 2014", "desc": "深色中式古典奢華：藻井吊頂、格柵屏風、圓形金飾，全組案例中最「中式」的一案。", "serif": false, "one": 1, "pg": 1, "fix": 1, "imgs": [], "n": 10}];
 CASES[3].ntv=1; /* Nantong's first frame is the click-to-play video (see the grid builder) */
 CASES[4].video='assets/tianyue.mp4';CASES[4].poster='assets/poster-tianyue.jpg';CASES[4].vnote='案例漫遊 · 天樾書院';
 CASES[5].video='assets/bihai.mp4';CASES[5].poster='assets/poster-bihai.jpg';CASES[5].vnote='實拍漫遊 · 碧海方舟';
