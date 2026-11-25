@@ -176,6 +176,15 @@ body{padding-bottom:56px}
 .founder.in .nameblock{opacity:1;transform:none}
 .founder h3{font-size:clamp(32px,3.6vw,48px);margin:0 0 8px;font-weight:900;letter-spacing:.14em}
 .founder .role{color:var(--gold);letter-spacing:.3em;font-size:15px;margin:0;line-height:2}
+.founder .fcontact{margin-top:26px;padding-top:18px;border-top:1px solid var(--line)}
+.founder .fcontact-label{font-family:var(--en);font-size:11px;letter-spacing:.42em;color:var(--gold);margin:0 0 10px;text-transform:uppercase}
+.founder .fcontact-item{display:flex;align-items:baseline;gap:10px;width:100%;padding:4px 0;background:none;border:0;cursor:pointer;font-family:var(--sans);text-align:left;color:var(--ink2)}
+.founder .fcontact-app{font-size:12px;color:var(--ink3);letter-spacing:.08em;min-width:64px}
+.founder .fcontact-id{font-size:14px;color:var(--ink2);letter-spacing:.04em}
+.founder .fcontact-item:hover .fcontact-id{color:var(--gold2)}
+.founder .fcontact-hint{font-size:11px;color:var(--ink3);opacity:1;transition:color .3s ease;margin-left:auto}
+.founder .fcontact-item:hover .fcontact-hint{color:var(--gold)}
+.founder .fcontact-item.copied .fcontact-hint{color:var(--gold2)}
 .founder.flip .bigname{right:auto;left:1%;transform:translateY(-115%);padding-left:0}
 .founder.flip.in .bigname{transform:none}
 .founder.flip .bio-col{left:auto;right:0}
@@ -842,6 +851,10 @@ footer{padding:26px 0 10px;text-align:center;color:var(--ink3);font-size:12px;le
       <div class="bio-col">
         <p class="bio">畢業於清華大學美術學院，早年涉足不同的藝術與設計範疇，具有十餘年室內設計經驗及運營管理經驗。常遊歷歐洲、東南亞等地，在日本熊本的一家餐廳，偶遇鄰桌的現任合伙人劉力寧先生，至此開啟了事業上的緣分。常在不同城市穿梭，善於細膩觀察與研究，思考不同的需求與方式。</p>
         <p class="bio-en">A graduate of the Academy of Arts &amp; Design, Tsinghua University, Mr. Zhang has worked across art and design for over a decade, with deep experience in both interior design and operations. Travelling often through Europe and Southeast Asia, he met his future partner Mr. Liu Lining by chance at a restaurant in Kumamoto, Japan. Moving between cities, he observes closely and studies how different people live — and what they truly need.</p>
+        <div class="fcontact">
+          <p class="fcontact-label">CONTACT</p>
+          <button type="button" class="fcontact-item" data-copy="dafan4780"><span class="fcontact-app">WeChat</span><span class="fcontact-id">dafan4780</span><span class="fcontact-hint">複製</span></button>
+        </div>
       </div>
       <div class="nameblock">
         <h3>張繼釩</h3>
@@ -854,6 +867,11 @@ footer{padding:26px 0 10px;text-align:center;color:var(--ink3);font-size:12px;le
       <div class="bio-col">
         <p class="bio">從事室內設計二十餘年，善於思考生活行為、商業行為等設計邏輯，具有深厚的美學根基。設計上注重空間比例、功能分配、材質與燈光運用，强調整體設計、整體呈現。其設計作品既充滿寧靜的雅致，又時而顯現意想不到的驚喜。</p>
         <p class="bio-en">With more than twenty years in interior design, Mr. Liu Lining thinks deeply about the logic behind how people live and do business, grounded in a profound aesthetic foundation. His work attends to spatial proportion, functional allocation, materials and light — always designed as a whole, and presented as a whole: serene and elegant, yet with unexpected moments of delight.</p>
+        <div class="fcontact">
+          <p class="fcontact-label">CONTACT</p>
+          <button type="button" class="fcontact-item" data-copy="ryanliu112"><span class="fcontact-app">WeChat</span><span class="fcontact-id">ryanliu112</span><span class="fcontact-hint">複製</span></button>
+          <button type="button" class="fcontact-item" data-copy="@ryanliu.interior"><span class="fcontact-app">WhatsApp</span><span class="fcontact-id">@ryanliu.interior</span><span class="fcontact-hint">複製</span></button>
+        </div>
       </div>
       <div class="nameblock">
         <h3>劉力寧</h3>
@@ -1557,6 +1575,32 @@ function syncGradeLock(){var f=document.getElementById('gradefield');f.classList
 segWire('svcseg',function(b){svcMul=parseFloat(b.getAttribute('data-s'));svcName=b.childNodes[0].textContent.trim();svcConcept=(b.getAttribute('data-s')==='0.2');syncGradeLock();});
 syncGradeLock();
 calc();
+document.querySelectorAll('.fcontact-item').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var val=btn.getAttribute('data-copy');
+    function done(){
+      var hint=btn.querySelector('.fcontact-hint');
+      btn.classList.add('copied');
+      if(hint){hint.textContent='已複製';}
+      setTimeout(function(){
+        btn.classList.remove('copied');
+        if(hint){hint.textContent='複製';}
+      },1600);
+    }
+    function fallback(){
+      var ta=document.createElement('textarea');
+      ta.value=val;
+      ta.style.position='fixed';ta.style.opacity='0';
+      document.body.appendChild(ta);
+      ta.select();
+      try{document.execCommand('copy');done();}catch(e){}
+      document.body.removeChild(ta);
+    }
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(val).then(done).catch(fallback);
+    }else{fallback();}
+  });
+});
 </script>
 </body>
 </html>
