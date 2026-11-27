@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="dark">
 <link rel="icon" href="data:,">
-<title>FINENESS 梵凝空間設計 — 私宅全案設計</title>
+<title>FINENESS — Private Residence Full-Scope Design</title>
 <link href="https://api.fontshare.com/v2/css?f[]=chillax@400,500,600,700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;900&family=Noto+Sans+TC:wght@300;400;500;600;700;900&family=Noto+Serif+TC:wght@600;900&display=swap" rel="stylesheet">
 <style>
@@ -41,9 +41,10 @@ h2.title .gold{color:var(--gold)}
 #progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--gold-dim),var(--gold2));width:0;z-index:60}
 nav.chapters{position:fixed;left:0;right:0;bottom:0;z-index:55;background:rgba(18,13,8,.88);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
 nav.chapters .wrap{display:flex;gap:4px;overflow-x:auto;padding-top:8px;padding-bottom:calc(8px + env(safe-area-inset-bottom));scrollbar-width:none}
-nav.chapters a{color:var(--ink2);text-decoration:none;font-size:13px;letter-spacing:.14em;padding:8px 12px;white-space:nowrap;border-radius:2px;min-height:36px;display:flex;align-items:center}
+nav.chapters a{color:var(--ink2);text-decoration:none;font-size:13px;letter-spacing:.14em;padding:6px 12px;white-space:nowrap;border-radius:2px;min-height:36px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;line-height:1.35}
+nav.chapters a .nav-en{font-family:var(--en);font-size:10px;letter-spacing:.05em;color:var(--ink3);font-weight:400}
 nav.chapters a:hover,nav.chapters a.on{color:var(--gold2);background:rgba(201,168,106,.1)}
-body{padding-bottom:56px}
+body{padding-bottom:74px}
 /* cover */
 .cover{min-height:100svh;display:flex;align-items:stretch;padding:0;overflow:hidden}
 .cover .bg{position:absolute;inset:0}
@@ -70,6 +71,44 @@ body{padding-bottom:56px}
 @media (max-width:640px){.cover .sub{font-size:19px;letter-spacing:.26em;margin-right:-.26em}.cover .scrollhint{font-size:15px;letter-spacing:.14em;gap:10px;margin-top:22px}.cover .scrollhint::after{width:34px}.cover .scrollhint .dn{font-size:21px}}
 @keyframes dn{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
 @media (prefers-reduced-motion:reduce){.cover .scrollhint .dn{animation:none}}
+/* batch-1 English sublines: smaller Chillax lines in a softer colour under their Chinese, matching the founders' bio-en treatment */
+.lede-en{color:var(--ink3);font-size:13.5px;font-family:var(--en);letter-spacing:.02em;line-height:1.7;margin:10px 0 0;max-width:46em}
+.why .five .en-line{display:block;font-family:var(--en);font-size:12.5px;color:#b6a888;letter-spacing:.03em;line-height:1.55;margin-top:3px;font-weight:400}
+.mapstats .stat-en{display:block;font-family:var(--en);font-size:11.5px;letter-spacing:.08em;color:var(--ink3);margin-top:3px}
+.pin em .pin-en{font-family:var(--en);font-size:11px;letter-spacing:.1em;color:var(--ink2);margin-left:2px}
+.strip-panel p .svc-en{display:block;font-family:var(--en);font-size:13px;color:var(--ink3);letter-spacing:.02em;line-height:1.6;margin-top:3px}
+/* batch-2 English sublines: same treatment as batch-1 — smaller Chillax lines in a softer colour under their Chinese */
+.fear-head-en{margin:10px 0 0 52px;font-family:var(--en);font-size:15px;color:var(--ink3);letter-spacing:.02em;line-height:1.6;font-weight:400}
+.pain-item .txt-en{font-family:var(--en);font-size:clamp(14px,1.6vw,18px);font-weight:500;color:var(--ink2);line-height:1.55;margin-top:7px}
+.pain-item .txt-en s{text-decoration-color:var(--red);text-decoration-thickness:2px;color:var(--ink3)}
+.pain-item .fear .en-line{display:block;font-family:var(--en);font-size:12.5px;color:var(--ink3);letter-spacing:.02em;line-height:1.6;margin-top:5px;white-space:normal;max-width:24em;margin-left:auto}
+.kicker-long{text-transform:none;letter-spacing:.05em;font-size:13px;line-height:1.85;max-width:36em}
+.paper-lines .pl1-en{font-family:var(--en);font-size:15px;font-weight:500;color:var(--ink3);letter-spacing:.03em;margin:9px 0 0}
+.paper-lines .pl2-en{font-family:var(--en);font-size:13.5px;color:var(--ink3);letter-spacing:.02em;line-height:1.7;margin:10px 0 0;max-width:27em}
+.check-list li .en-line{display:block;font-family:var(--en);font-size:13px;color:var(--ink3);letter-spacing:.02em;line-height:1.6;margin-top:3px}
+.step .no small .stage-en{display:block;font-family:var(--en);font-size:10.5px;letter-spacing:.08em;line-height:1.5;margin-top:3px}
+.step h3 .h3-en{display:block;font-family:var(--en);font-size:13px;font-weight:400;color:var(--ink3);letter-spacing:.02em;line-height:1.55;margin-top:5px}
+.step p .p-en{display:block;font-family:var(--en);font-size:13px;color:var(--ink3);letter-spacing:.02em;line-height:1.65;margin-top:5px}
+.syslist div{flex-wrap:wrap}
+.syslist .sys-en{flex:0 0 100%;font-family:var(--en);font-size:12.5px;color:var(--ink3);letter-spacing:.02em;line-height:1.6;margin-top:2px}
+.quote-band .q p.q-en{font-family:var(--en);font-size:14.5px;font-weight:400;color:var(--ink3);letter-spacing:.02em;line-height:1.75;margin:20px 0 0;max-width:32em}
+.cover .scrollcol{display:flex;flex-direction:column;gap:7px;text-align:left}
+.cover .scrollcol .scrollhint{margin:0;order:1}
+.cover .scrollhint-en{margin:0;order:0;align-self:flex-start;text-align:left;font-family:var(--en);font-size:12.5px;font-weight:500;letter-spacing:.14em;color:rgba(48,40,26,.72);text-shadow:0 1px 10px rgba(255,255,255,.85),0 0 22px rgba(255,255,255,.5);white-space:nowrap}
+.cover .coverfoot .scrollcol{order:1;flex:none;align-self:flex-end}
+@media(max-width:820px){.cover .coverfoot .scrollcol{order:2;align-self:flex-start}.cover .coverfoot .scrollcol .scrollhint{order:1}.cover .coverfoot .scrollcol .scrollhint-en{order:0}}
+@media(max-width:640px){.cover .scrollhint-en{font-size:11px;letter-spacing:.07em;white-space:normal}}
+/* batch-3 English sublines (§11 cases + §12 dimensions): same treatment as batches 1-2 — smaller Chillax lines in a softer colour under their Chinese; the dimension view sits on a light card, so its English lines use the softer dark-gold tones that read on white */
+.case-head .desc .desc-en{display:block;white-space:normal;font-family:var(--en);font-size:13px;font-weight:400;color:var(--ink3);letter-spacing:.02em;line-height:1.65;margin-top:5px}
+.video-note .vn-en{display:block;font-family:var(--en);font-size:12px;letter-spacing:.05em;line-height:1.6;margin-top:3px}
+.dim-tabs button .dim-nen{display:block;font-family:var(--en);font-size:11px;font-weight:400;letter-spacing:.04em;line-height:1.45;margin-top:2px;color:#a08c5a}
+#dims .dim-tabs button.on .dim-nen{color:rgba(23,18,8,.68)}
+#dims .dim-view h3 .h3-en{display:block;font-family:var(--en);font-size:13.5px;font-weight:500;color:#8a7a52;letter-spacing:.02em;line-height:1.55;margin-top:6px}
+#dims .dim-view p .p-en{display:block;font-family:var(--en);font-size:13px;color:#7d6f4f;letter-spacing:.02em;line-height:1.65;margin-top:6px}
+/* Pangu overlay (F86): the English line sits under the Chinese in a serif face, spread to the Chinese line's own width so Classical answers 古典 at the head and East answers 东方 at the tail — centred, balanced, 中正仁和. The spread is distributed letter by letter (each glyph is its own flex item, with a normal word space between the two words), so the line reads as one letter-spaced descriptor rather than two words stranded at opposite ends */
+.pg2 .u-t .pgt-wrap{display:flex;flex-direction:column;align-items:stretch}
+.pg2 .u-t .pgt-en{display:flex;justify-content:space-between;font-family:var(--serif);font-weight:600;font-size:clamp(10px,1.9vw,26px);font-size:1.55cqw;letter-spacing:0;line-height:1.3;color:#f5efe2;text-shadow:0 2px 18px rgba(0,0,0,.55);margin-top:.4em;white-space:nowrap}
+.pg2 .u-t .pgt-en i{font-style:normal}
 /* why */
 .why{padding:0;min-height:94svh;display:flex;align-items:flex-start;overflow:hidden}
 .why .bg{position:absolute;inset:0}
@@ -461,21 +500,23 @@ body{padding-bottom:56px}
 @media(max-width:820px){.step figure.stripfull{grid-column:1/-1}}
 @media(max-width:820px){.step.wide{grid-template-columns:1fr}.strip3,.strip4{grid-column:1/-1}.strip4{grid-template-columns:repeat(2,1fr)}.strip3 figure{aspect-ratio:4/3}}
 @media(max-width:820px){.strip3.s21{grid-template-columns:.7fr .5fr;grid-template-rows:none;aspect-ratio:auto}.strip3.s21 figure:first-child{grid-column:1/-1;aspect-ratio:1.565}.strip3.s21 figure:nth-child(2){aspect-ratio:.7}.strip3.s21 figure:nth-child(3){aspect-ratio:.5}}
-/* 1-1: the hand in the cutout reaches in from the lower left, so the phone lives at the step's lower-left corner, layered over the lower half of the text column; the two photos on the right take the wider, taller gallery the phone vacated */
-.step.step11{grid-template-columns:110px 1fr 1.45fr;min-height:472px;padding-bottom:46px}
+/* 1-1: the hand in the cutout is anchored at the step's own bottom-left corner (left:-1px, bottom:2px — its bottom edge sits just above the 1-2 divider) and grows up and to the right from that corner. The phone's size is NOT the lever (desktop height stays 310px): the step block's height is. The block is pulled back per breakpoint so its bottom edge — the 1-2 divider — and the bottom-anchored phone rise together until the phone's VISIBLE top touches the bottom of the English small print ("Understand life first; design second."). Visible means the alpha picture, not the frame: visible pixels start at 14.6% of the square PNG's height, so the visible height is 0.854 × 310px ≈ 264.7px. The English bottom's depth below the step's top steps down with width (measured in the rendered page: 276.9px at 1151–1154px, where the heading wraps one line deeper; 240.2px at 1155–1336px; 220.0px at 1337px and up, 1440px included; 198.6px past ~1541px), so one min-height cannot touch at every width — each band below is set from its own deepest point: min-height = deepest English bottom + 264.7px visible height + a ≈2–3px static gap, i.e. 547px (1151–1154), 510px (1155–1336) and 490px (1337+). At 1440px the measured static gap is ≈2px — the phone top effectively touches the English bottom — and everywhere else on desktop the gap only grows. The float lift is cut from 10px to 2px (phoneFloat below, which animates only this phone's img), smaller than that static gap, so even at the float peak the visible top never covers the English; hover still enlarges it (scale 1.2). Mid band (821–1150px) is unchanged (min-height 520px, phone 236px): there the English wraps to as many as five lines and the binding contact is the cutout's right flank against the English line starts — the requirement there is only never to cover the English, float peak included, not to touch it. On mobile the phone already rests bottom-left in the reserved space under the gallery with the English far above it (measured: no contact at any width ≤820px), so it is unchanged. */
+.step.step11{grid-template-columns:110px 1fr 1.45fr;min-height:490px;padding-bottom:46px}
 .step11 .step11-text{position:relative;z-index:1}
 .gal-11{grid-template-columns:1.08fr 1fr;height:336px}
 .gal-11>figure{height:100%}
 .gal-11>figure img{width:100%;height:100%;object-fit:cover}
-.step11 .phone11{position:absolute;left:-1px;bottom:-1px;height:378px;width:auto;z-index:6;margin:0;background:transparent;border:none;border-radius:0;overflow:visible;opacity:0;transform:translate(-64px,54px) rotate(7deg) scale(.86);transform-origin:16% 94%;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.step11 .phone11{position:absolute;left:-1px;bottom:2px;height:310px;width:auto;z-index:6;margin:0;background:transparent;border:none;border-radius:0;overflow:visible;opacity:0;transform:translate(-64px,54px) rotate(7deg) scale(.86);transform-origin:16% 94%;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
 .step11 .phone11.phone-in{animation:phoneInL .9s cubic-bezier(.22,.61,.21,1) both}
 @keyframes phoneInL{from{opacity:0;transform:translate(-64px,54px) rotate(7deg) scale(.86)}to{opacity:1;transform:translate(0,0) rotate(0deg) scale(1)}}
 .step11 .phone11.settled{animation:none;opacity:1;transform:none}
 .step11 .phone11.settled:hover{z-index:8;transform:scale(1.2)}
 .step11 .phone11.phone-in img{animation:phoneFloat 4s ease-in-out .95s infinite}
-@keyframes phoneFloat{0%,100%{transform:translateY(0);filter:drop-shadow(0 14px 22px rgba(0,0,0,.5))}50%{transform:translateY(-10px);filter:drop-shadow(0 26px 32px rgba(0,0,0,.36))}}
+@keyframes phoneFloat{0%,100%{transform:translateY(0);filter:drop-shadow(0 14px 22px rgba(0,0,0,.5))}50%{transform:translateY(-2px);filter:drop-shadow(0 26px 32px rgba(0,0,0,.36))}}
 .step11 .phone11 img{height:100%;width:auto;object-fit:contain;filter:drop-shadow(0 14px 22px rgba(0,0,0,.5))}
-@media(max-width:1150px) and (min-width:821px){.step.step11{min-height:436px}.step11 .phone11{height:336px;left:-1px}}
+@media(max-width:1150px) and (min-width:821px){.step.step11{min-height:520px}.step11 .phone11{height:236px;left:-1px;bottom:2px}}
+@media(max-width:1336px) and (min-width:1151px){.step.step11{min-height:510px}}
+@media(max-width:1154px) and (min-width:1151px){.step.step11{min-height:547px}}
 @media(max-width:820px){
   .step.step11{grid-template-columns:1fr;min-height:0;padding-bottom:248px}
   .gal-11{height:252px}
@@ -579,18 +620,25 @@ body{padding-bottom:56px}
 .flow-strip.focus img.on{opacity:1;filter:none}
 @media (prefers-reduced-motion:reduce){.flow-strip,.flow-strip img,.flowpct button{transition:none}}
 .flow-hint{color:var(--ink3);font-size:12.5px;letter-spacing:.18em;margin-top:10px;text-align:right}
-.dflow{display:grid;grid-template-columns:repeat(7,1fr);gap:12px;margin-top:36px}
-/* the seven stage boxes stay on one row at every width — no wrap fallback; narrower widths are absorbed by tighter gaps, padding and type instead */
-@media(max-width:1280px){.dflow{gap:8px}.dflow article{padding:16px 14px}.dflow article b{font-size:11.5px;letter-spacing:.16em}.dflow article h3{font-size:15.5px}.dflow article ul{font-size:12.5px;padding-left:15px}.dflow article.open ul{font-size:13.5px}}
-@media(max-width:820px){.dflow{gap:6px}.dflow article{padding:12px 9px}.dflow article b{font-size:10px;letter-spacing:.1em}.dflow article h3{font-size:13px;margin:6px 0 9px}.dflow article ul{font-size:11px;padding-left:13px;gap:4px}.dflow article.open ul{font-size:11.5px}}
-@media(max-width:560px){.dflow{gap:4px}.dflow article{padding:9px 6px}.dflow article b{font-size:8.5px;letter-spacing:.05em}.dflow article h3{font-size:11.5px}.dflow article ul{font-size:9.5px;padding-left:11px;gap:3px}.dflow article.open ul{font-size:10px}}
-.dflow article{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:22px;cursor:pointer;transition:transform .35s ease,border-color .3s,background .3s}
+.flowpct button .fen{display:block;font-family:var(--en);font-size:11px;color:var(--ink3);letter-spacing:.02em;line-height:1.5;margin-top:3px}
+.flowpct button.on .fen{color:var(--ink2)}
+/* batch-4: design flow becomes one column of flat, wide boxes — seven stages stacked, each box holding a Chinese block on top and an English block below, split by a hairline; STAGE label, deep-gold palette and the hover/tap open behaviour are unchanged, only the open scale is gentler so a full-width box never spills sideways */
+.dflow{display:grid;grid-template-columns:1fr;gap:14px;margin-top:36px}
+.dflow article{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:20px 24px;cursor:pointer;transition:transform .35s ease,border-color .3s,background .3s}
 .dflow article:hover{border-color:var(--gold-dim)}
-.dflow article.open{border-color:var(--gold);background:var(--panel2);transform:scale(1.08);box-shadow:0 18px 44px rgba(0,0,0,.45);position:relative;z-index:2}
-.dflow article.open ul{color:var(--ink);font-size:15px}
-.dflow article b{font-family:var(--en);color:var(--gold);font-size:13px;letter-spacing:.24em}
-.dflow article h3{margin:8px 0 12px;font-size:18px;letter-spacing:.06em}
-.dflow article ul{margin:0;padding-left:18px;color:var(--ink2);font-size:14px;display:grid;gap:5px}
+.dflow article.open{border-color:var(--gold);background:var(--panel2);transform:scale(1.015);box-shadow:0 18px 44px rgba(0,0,0,.45);position:relative;z-index:2}
+.dflow article.open ul{color:var(--ink)}
+.dflow article.open ul.df-en-list{color:var(--ink2)}
+.dflow article b{font-family:var(--en);color:var(--gold);font-size:13px;letter-spacing:.24em;display:block}
+.df-zh,.df-en{display:grid;grid-template-columns:190px 1fr;gap:6px 24px;align-items:start}
+.df-zh{margin-top:10px}
+.df-zh h3{margin:0;font-size:18px;letter-spacing:.06em;line-height:1.5}
+.df-en-title{font-family:var(--en);font-size:15px;font-weight:500;color:var(--gold2);letter-spacing:.03em;line-height:1.5}
+.df-div{height:1px;background:var(--line);margin:16px 0 14px;opacity:.65}
+.dflow article ul{margin:0;padding-left:18px;color:var(--ink2);font-size:14px;display:grid;grid-template-columns:1fr 1fr;gap:5px 28px;line-height:1.6}
+.dflow article ul.df-en-list{font-family:var(--en);font-size:13px;color:var(--ink3);letter-spacing:.01em;line-height:1.6}
+@media(max-width:820px){.dflow article{padding:16px}.df-zh,.df-en{grid-template-columns:1fr;gap:6px}.dflow article ul{grid-template-columns:1fr}.df-div{margin:14px 0 12px}}
+@media(max-width:560px){.dflow article b{font-size:11px;letter-spacing:.16em}.df-zh h3{font-size:16px}.df-en-title{font-size:14px}.dflow article ul{font-size:13px}.dflow article ul.df-en-list{font-size:12.5px}}
 /* calculator */
 .calc{background:linear-gradient(180deg,#1d150c,#14100a)}
 .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);margin-top:40px;align-items:start}
@@ -635,6 +683,26 @@ input[type=range]:focus-visible{outline:2px solid var(--gold-dim);outline-offset
 .rate-table th{color:var(--gold);letter-spacing:.14em;font-weight:500;background:var(--panel)}
 .rate-table td{color:var(--ink2);font-family:var(--en)}
 .rate-table td:first-child{font-family:var(--sans)}
+/* batch-5 English sublines (§15 calculator + §16 footer/nav): same treatment as batches 1-3 — smaller Chillax lines in a softer colour under their Chinese; field labels and table heads use Title Case lines, body notes use sentence lines */
+.field>.lab .lab-en{display:block;font-family:var(--en);font-size:11.5px;font-weight:400;letter-spacing:.07em;color:var(--ink3);margin-top:4px}
+.seg button small .sm-en{display:block;font-family:var(--en);font-size:11.5px;color:var(--ink3);letter-spacing:.02em;line-height:1.55;margin-top:3px}
+.seg button.on small .sm-en{color:var(--ink2)}
+.fineprint .fp-en{display:block;font-family:var(--en);letter-spacing:.02em;line-height:1.7;margin-top:4px}
+.rate-table th .th-en,.rate-table td .td-en{display:block;font-family:var(--en);font-size:11px;font-weight:400;letter-spacing:.04em;color:var(--ink3);margin-top:2px;line-height:1.45}
+.rate-table td .td-min{display:block;font-family:var(--en);font-size:11px;color:var(--ink3);margin-top:2px}
+.calc .note-en{display:block;font-family:var(--en);font-size:12px;letter-spacing:.02em;line-height:1.65;margin-top:4px}
+.area-row .unit .unit-en{display:block;font-family:var(--en);font-size:10.5px;letter-spacing:.05em;margin-top:1px}
+#bandnote .bn-en{display:block;font-family:var(--en);font-size:12px;letter-spacing:.02em;line-height:1.55;margin-top:2px}
+.result .amount .amt-en{display:block;font-family:var(--en);font-size:13px;font-weight:400;letter-spacing:.02em;color:var(--ink3);margin-top:6px}
+.result .disclaimer .d-en{display:block;font-family:var(--en);font-size:12.5px;font-weight:400;letter-spacing:.02em;line-height:1.6;color:var(--ink3);margin-top:5px}
+/* calculation rows (F158-F165 layout): each row pairs a two-line small label stack (Chinese over English) with the row's figure set large at the same two-line height */
+.result .process .prow{display:flex;align-items:center;justify-content:space-between;gap:18px}
+.result .process .plabs{display:flex;flex-direction:column;gap:1px;min-width:0}
+.result .process .pzh{font-size:13.5px;color:var(--ink2);line-height:1.5}
+.result .process .pen{font-family:var(--en);font-size:12px;color:var(--ink3);letter-spacing:.02em;line-height:1.5}
+.result .process .pbig{font-family:var(--en);font-size:clamp(21px,2.2vw,27px);font-weight:600;color:var(--ink);line-height:1.15;white-space:nowrap;text-align:right}
+.result .process .pbig .punit{display:block;font-family:var(--sans);font-size:11px;font-weight:400;color:var(--ink3);letter-spacing:.06em;margin-top:2px}
+footer .foot-en{display:block;font-family:var(--en);font-size:11px;letter-spacing:.08em;color:var(--ink3);margin-top:5px}
 /* closing — the still layers rest at the video tail-frame composition (scale 1.01 about 50%/61%) and push from there to the end frame composed to the 52P reference (image-348); the interior-to-exterior move itself is carried by the video (see the handoff note below). The interior photo layer (lyr-room) is retired from the choreography: its through-the-window skyline is a different photograph from the skyline plate — measured China Zun top at 53.5% of frame height and 0.78× the plate tower's height — so the old mid-push dissolve could never register the two skylines and ghosted a double tower; it stays in the DOM at opacity 0 only. Layer order, back to front: the user's sky plate; the headline block — bold (600) black type stretched to ~96.7% of frame width with its glyph band at 35.8–49.8% of frame height, the gold TOWARDS IDEAL LIVING line tight beneath it; then the transparent skyline in its own stage IN FRONT of the type, pressing over wherever the two overlap (China Zun's top lands at ~37% of frame height, the top third stays clean sky); and on top of everything at the very bottom centre, the original FINENESS logo artwork (s52-2.png, wordmark + Chinese line, ~9% of frame width) — never typeset. The exterior layers push at different rates for parallax, and a slow drift keeps the end frame breathing */
 .closing{padding:0;min-height:100svh;display:flex;align-items:flex-start;justify-content:center;text-align:center;overflow:hidden}
 .closing .stage{position:absolute;inset:0;z-index:1;transform:scale(1.01);transform-origin:50% 61%}
@@ -709,7 +777,7 @@ input[type=range]:focus-visible{outline:2px solid var(--gold-dim);outline-offset
 .pg2 .u-c{left:50%;top:0;width:22.2%;height:28%;z-index:2}
 .pg2 .u-d{left:28.5%;bottom:0;width:21.5%;height:30.3%;z-index:2}
 .pg2 .u-t{left:50%;top:47%;transform:translate(-50%,-50%) scale(1.35);z-index:3;display:flex;align-items:center;justify-content:center;background:none;box-shadow:none;overflow:visible}
-.pg2 .u-t span{font-family:var(--serif);font-weight:900;font-size:clamp(20px,5vw,54px);font-size:4.4cqw;letter-spacing:.1em;color:#f5efe2;white-space:nowrap;text-shadow:0 2px 18px rgba(0,0,0,.55)}
+.pg2 .u-t .pgt-cn{font-family:var(--serif);font-weight:900;font-size:clamp(20px,5vw,54px);font-size:4.4cqw;letter-spacing:.1em;color:#f5efe2;white-space:nowrap;text-shadow:0 2px 18px rgba(0,0,0,.55);text-align:center}
 .pglux{position:absolute;left:59.5%;top:7%;z-index:3;font-family:var(--en);font-weight:700;font-size:clamp(13px,3.4vw,40px);font-size:3.9cqw;line-height:1.3;letter-spacing:.03em;color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.5);opacity:0;transform:translateX(20px)}
 .pg1 .u-a{transform:translateX(-52px)}
 .pg1 .u-b{transform:translateY(-44px)}
@@ -781,7 +849,7 @@ footer{padding:26px 0 10px;text-align:center;color:var(--ink3);font-size:12px;le
         <p class="sub">梵凝空間設計（北京）事務所</p>
         <p class="sub2">Fineness Design · Beijing</p>
       </div>
-      <p class="scrollhint">向下瀏覽 · 私宅作品與全案交付 <span class="dn" aria-hidden="true">↓</span></p>
+      <div class="scrollcol"><p class="scrollhint-en">Scroll Down · Private Residences &amp; Full-Scope Delivery</p><p class="scrollhint">向下瀏覽 · 私宅作品與全案交付 <span class="dn" aria-hidden="true">↓</span></p></div>
     </div>
   </div>
 </header>
@@ -792,13 +860,14 @@ footer{padding:26px 0 10px;text-align:center;color:var(--ink3);font-size:12px;le
   <div class="shade"></div>
   <div class="inner wrap">
     <p class="lede rv" style="color:var(--gold2);max-width:36em;font-size:clamp(16px,1.7vw,20px);line-height:1.9">Fineness Design 的特點是超越客戶期望，以設計全交付為競爭核心，打造完美的微觀設計體驗與宏觀的服務體驗。</p>
+    <p class="lede-en rv" style="max-width:40em">What sets Fineness Design apart is going beyond client expectations — full-scope delivery as the core strength, and a considered experience in every detail and at every scale.</p>
     <h2 class="rv">Why Choose<br>FINENESS</h2>
     <div class="five">
-      <div class="rv"><b>TEAM</b><span>國際化的團隊組合</span></div>
-      <div class="rv"><b>EXPERIENCE</b><span>豐富的設計經驗</span></div>
-      <div class="rv"><b>VISION</b><span>國際視野的美學高度</span></div>
-      <div class="rv"><b>COST CONTROL</b><span>卓著的成本控制能力</span></div>
-      <div class="rv"><b>QUALITY</b><span>緊密的施工配合</span></div>
+      <div class="rv"><b>TEAM</b><span>國際化的團隊組合</span><span class="en-line">An international team</span></div>
+      <div class="rv"><b>EXPERIENCE</b><span>豐富的設計經驗</span><span class="en-line">Deep design experience</span></div>
+      <div class="rv"><b>VISION</b><span>國際視野的美學高度</span><span class="en-line">An international eye for aesthetics</span></div>
+      <div class="rv"><b>COST CONTROL</b><span>卓著的成本控制能力</span><span class="en-line">Strong cost control</span></div>
+      <div class="rv"><b>QUALITY</b><span>緊密的施工配合</span><span class="en-line">Close coordination with construction</span></div>
     </div>
   </div>
 </section>
@@ -822,11 +891,12 @@ footer{padding:26px 0 10px;text-align:center;color:var(--ink3);font-size:12px;le
     <p class="kicker rv">Projects Worldwide</p>
     <h2 class="title rv">項目座標，<span class="gold">持續增加中</span></h2>
     <p class="lede rv">從北京出發，項目落在亞洲、美洲、歐洲、非洲與中東。遠程設計、本地配合，是梵凝多年境外項目落地的基本功。</p>
+    <p class="lede-en rv">From Beijing, our projects reach Asia, the Americas, Europe, Africa and the Middle East. Remote design with local coordination — the foundation of our overseas delivery over many years.</p>
     <div class="mapbox rv"><div class="mapwrap"><img src="assets/s04-1.png" alt="FINENESS 全球項目分佈地圖（原稿透明底地圖，疊放於深色底上），城市以座標符號落點" loading="lazy"><div id="mappins" aria-hidden="true"></div></div></div>
     <div class="mapstats rv">
-      <div><b>36+</b><span>項目所在城市</span></div>
-      <div><b>14</b><span>海外城市</span></div>
-      <div><b>5</b><span>覆蓋大洲板塊</span></div>
+      <div><b>36+</b><span>項目所在城市</span><span class="stat-en">Cities with Projects</span></div>
+      <div><b>14</b><span>海外城市</span><span class="stat-en">Overseas Cities</span></div>
+      <div><b>5</b><span>覆蓋大洲板塊</span><span class="stat-en">Continents Covered</span></div>
     </div>
   </div>
 </section>
@@ -837,6 +907,7 @@ footer{padding:26px 0 10px;text-align:center;color:var(--ink3);font-size:12px;le
     <p class="kicker rv">Design Services</p>
     <h2 class="title rv">八項服務，<span class="gold">一條完整的交付鏈</span></h2>
     <p class="lede rv">從第一張圖到交付之後，八個環節環環相扣。</p>
+    <p class="lede-en rv">From the first drawing to after handover, eight links in one unbroken chain.</p>
     <div class="strip-row" id="striprow" role="tablist" aria-label="八項服務"></div>
     <div class="strip-panel rv" id="strippanel" role="tabpanel"></div>
   </div>
@@ -853,7 +924,7 @@ footer{padding:26px 0 10px;text-align:center;color:var(--ink3);font-size:12px;le
         <p class="bio-en">A graduate of the Academy of Arts &amp; Design, Tsinghua University, Mr. Zhang has worked across art and design for over a decade, with deep experience in both interior design and operations. Travelling often through Europe and Southeast Asia, he met his future partner Mr. Liu Lining by chance at a restaurant in Kumamoto, Japan. Moving between cities, he observes closely and studies how different people live — and what they truly need.</p>
         <div class="fcontact">
           <p class="fcontact-label">CONTACT</p>
-          <button type="button" class="fcontact-item" data-copy="dafan4780"><span class="fcontact-app">WeChat</span><span class="fcontact-id">dafan4780</span><span class="fcontact-hint">複製</span></button>
+          <button type="button" class="fcontact-item" data-copy="dafan4780"><span class="fcontact-app">WeChat</span><span class="fcontact-id">dafan4780</span><span class="fcontact-hint">Copy</span></button>
         </div>
       </div>
       <div class="nameblock">
@@ -869,8 +940,8 @@ footer{padding:26px 0 10px;text-align:center;color:var(--ink3);font-size:12px;le
         <p class="bio-en">With more than twenty years in interior design, Mr. Liu Lining thinks deeply about the logic behind how people live and do business, grounded in a profound aesthetic foundation. His work attends to spatial proportion, functional allocation, materials and light — always designed as a whole, and presented as a whole: serene and elegant, yet with unexpected moments of delight.</p>
         <div class="fcontact">
           <p class="fcontact-label">CONTACT</p>
-          <button type="button" class="fcontact-item" data-copy="ryanliu112"><span class="fcontact-app">WeChat</span><span class="fcontact-id">ryanliu112</span><span class="fcontact-hint">複製</span></button>
-          <button type="button" class="fcontact-item" data-copy="@ryanliu.designer"><span class="fcontact-app">WhatsApp</span><span class="fcontact-id">@ryanliu.designer</span><span class="fcontact-hint">複製</span></button>
+          <button type="button" class="fcontact-item" data-copy="ryanliu112"><span class="fcontact-app">WeChat</span><span class="fcontact-id">ryanliu112</span><span class="fcontact-hint">Copy</span></button>
+          <button type="button" class="fcontact-item" data-copy="@ryanliu.designer"><span class="fcontact-app">WhatsApp</span><span class="fcontact-id">@ryanliu.designer</span><span class="fcontact-hint">Copy</span></button>
         </div>
       </div>
       <div class="nameblock">
@@ -891,21 +962,22 @@ footer{padding:26px 0 10px;text-align:center;color:var(--ink3);font-size:12px;le
       <img class="im2" src="assets/pain-blind.jpg" alt="蒙眼女子黑白照片，象徵業主在裝修中的盲目與無助" loading="lazy">
     </figure>
     <h3 class="fear-head rv">先說說，<span class="q">你是不是也怕這些——</span></h3>
+    <p class="fear-head-en rv">First — are these the things you worry about, too?</p>
     <div class="pain-list">
       <div class="pain-item rv">
         <div class="no-mark" aria-hidden="true"></div>
-        <div><span class="tag">RENDER vs REALITY · 效果圖</span><div class="txt">看圖美上天，<s>實景醜到哭</s></div></div>
-        <p class="fear">圖與實景兩回事，是裝修最常見的第一坑。</p>
+        <div><span class="tag">RENDER vs REALITY · 效果圖</span><div class="txt">看圖美上天，<s>實景醜到哭</s></div><div class="txt-en">The renders look flawless; <s>the finished home falls far short.</s></div></div>
+        <p class="fear">圖與實景兩回事，是裝修最常見的第一坑。<span class="en-line">Renders and reality are two different things — the most common first pitfall in any renovation.</span></p>
       </div>
       <div class="pain-item rv">
         <div class="no-mark" aria-hidden="true"></div>
-        <div><span class="tag">BUDGET · 預算</span><div class="txt">前面報得低，<s>後期瘋狂增項</s></div></div>
-        <p class="fear">低價簽約、增項收尾，預算從一開始就失控。</p>
+        <div><span class="tag">BUDGET · 預算</span><div class="txt">前面報得低，<s>後期瘋狂增項</s></div><div class="txt-en">A low quote up front, <s>endless additional charges later.</s></div></div>
+        <p class="fear">低價簽約、增項收尾，預算從一開始就失控。<span class="en-line">Sign low, pay more later — the budget is out of control from day one.</span></p>
       </div>
       <div class="pain-item rv">
         <div class="no-mark" aria-hidden="true"></div>
-        <div><span class="tag">DELIVERY · 落地</span><div class="txt">全靠自己盯，<s>給現場的圖紙還不一定精細</s></div></div>
-        <p class="fear">落地圖紙甩給各廠家，全靠業主自己聯繫自己扛。</p>
+        <div><span class="tag">DELIVERY · 落地</span><div class="txt">全靠自己盯，<s>給現場的圖紙還不一定精細</s></div><div class="txt-en">You're left to supervise everything yourself — <s>and the drawings handed to site aren't always precise.</s></div></div>
+        <p class="fear">落地圖紙甩給各廠家，全靠業主自己聯繫自己扛。<span class="en-line">Drawings are passed to each supplier, and the owner is left to coordinate it all alone.</span></p>
       </div>
     </div>
   </div>
@@ -915,11 +987,13 @@ footer{padding:26px 0 10px;text-align:center;color:var(--ink3);font-size:12px;le
 <section id="then">
   <div class="wrap split2">
     <div class="rv">
-      <p class="kicker">In the Paper-and-Pen Era</p>
+      <p class="kicker kicker-long">Back when paper and pen were all there was, and technology had not yet caught up — this is how a design became a real home.</p>
       <h2 class="title attn">以前，在那個紙筆當道的年代，<span class="gold">他們就是這麼還原實景的</span></h2>
       <div class="paper-lines">
         <p class="pl1">沒有捷徑</p>
+        <p class="pl1-en">There Are No Shortcuts</p>
         <p class="pl2">圖與實景的距離，從落筆那一刻就開始縮短</p>
+        <p class="pl2-en">The gap between drawing and reality starts closing the moment the pen touches paper.</p>
       </div>
     </div>
     <div class="rv">
@@ -942,10 +1016,11 @@ footer{padding:26px 0 10px;text-align:center;color:var(--ink3);font-size:12px;le
       <p class="kicker">The Pit-Avoidance System</p>
       <h2 class="title attn">而現在，是獨一無二的<span class="gold">「排坑」設計機制</span></h2>
       <p class="lede">源自早年的境外酒店落地經驗：把會出問題的地方，在開工之前全部排掉。剖面、平面、軸測、節點——每一處銜接先在圖紙上走通，工地只負責照著做。</p>
+      <p class="lede-en">Born from years of delivering overseas hotels: every point where things could go wrong is resolved before work starts, so the site simply builds what the drawings say.</p>
       <ul class="check-list">
-        <li>結構、水電、裝飾三套圖紙完整配合，不斷層</li>
-        <li>每個節點提前確認，開工後不靠臨場發揮</li>
-        <li>以過程文件層層確認，從源頭抑制惡意增項</li>
+        <li><span>結構、水電、裝飾三套圖紙完整配合，不斷層<span class="en-line">Structural, plumbing/electrical and decorative drawings fully coordinated — no gaps.</span></span></li>
+        <li><span>每個節點提前確認，開工後不靠臨場發揮<span class="en-line">Every detail confirmed in advance; nothing left to improvisation on site.</span></span></li>
+        <li><span>以過程文件層層確認，從源頭抑制惡意增項<span class="en-line">Step-by-step written confirmation, stopping unjustified charges at the source.</span></span></li>
       </ul>
     </div>
     <figure class="board1 rv"><img src="assets/paikeng.jpg" alt="排坑機制圖紙成組圖：剖面、平面、軸測、節點與落地實景完整呈現" loading="lazy"></figure>
@@ -958,21 +1033,22 @@ footer{padding:26px 0 10px;text-align:center;color:var(--ink3);font-size:12px;le
     <p class="kicker rv">How Do They Do It</p>
     <h2 class="title rv attn">他們是怎麼做這些事的</h2>
     <p class="lede rv">四個階段、七個步驟。每一步都為了同一個結果：完美交付。</p>
+    <p class="lede-en rv">Four stages, seven steps. Every step serves one result: flawless delivery.</p>
     <div class="timeline">
       <div class="step step11 rv">
-        <div class="no">1-1<small>設計準備階段</small></div>
-        <div class="step11-text"><h3>生活方式探討 — <span class="goldline">摸清你的真實習慣</span></h3>
-        <p>收集需求，探討並提煉未被表達的需求，分析人與建築的關係。先懂生活，再談設計。</p></div>
+        <div class="no">1-1<small>設計準備階段<span class="stage-en">Design Preparation</span></small></div>
+        <div class="step11-text"><h3>生活方式探討 — <span class="goldline">摸清你的真實習慣</span><span class="h3-en">Understanding Your Way of Life — Getting to Know Your Real Habits</span></h3>
+        <p>收集需求，探討並提煉未被表達的需求，分析人與建築的關係。先懂生活，再談設計。<span class="p-en">We gather your brief, then explore and distil the needs you haven't put into words, and study how you relate to the building. Understand life first; design second.</span></p></div>
         <div class="gal gal-11">
           <figure><img src="assets/s11-2.jpg" alt="與客戶圍桌攤開平面圖，逐項探討生活需求" loading="lazy"></figure>
           <figure><img src="assets/s11-1.jpg" alt="《私宅客戶生活需求表單》封面" loading="lazy"></figure>
         </div>
-        <figure class="phone11" role="img" aria-label="手持手機的生活需求問卷"><img src="assets/s11-3.png" alt="手持手機填寫生活方式需求問卷（透明底原稿，手從左下角伸入，壓在文字區下半部之上）" loading="lazy"></figure>
+        <figure class="phone11" role="img" aria-label="手持手機的生活需求問卷"><img src="assets/s11-3.png" alt="手持手機填寫生活方式需求問卷（透明底原稿，手從步驟左下角伸入）" loading="lazy"></figure>
       </div>
       <div class="step wide rv">
-        <div class="no">1-2<small>設計準備階段</small></div>
-        <div><h3>建築實地勘測 — <span class="goldline">提前發現戶型硬傷</span></h3>
-        <p>原始建築實錄，探究建築的各種改造可能性，並落成原始圖紙。問題發現得越早，代價越小。</p></div>
+        <div class="no">1-2<small>設計準備階段<span class="stage-en">Design Preparation</span></small></div>
+        <div><h3>建築實地勘測 — <span class="goldline">提前發現戶型硬傷</span><span class="h3-en">On-Site Building Survey — Spotting Flaws in the Layout Early</span></h3>
+        <p>原始建築實錄，探究建築的各種改造可能性，並落成原始圖紙。問題發現得越早，代價越小。<span class="p-en">We record the building as it stands, explore what can be changed, and draw up the as-built survey. The earlier a problem is found, the less it costs.</span></p></div>
         <div class="strip3 s12">
           <figure style="aspect-ratio:0.616"><img src="assets/s12-6.jpg" alt="設計師站在樓梯上仰望，先到現場感受空間" loading="lazy"></figure>
           <figure style="aspect-ratio:0.617"><img src="assets/s12-5.jpg" alt="帶樓梯與高窗采光的原始建築空間，勘測關注的重點" loading="lazy"></figure>
@@ -980,9 +1056,9 @@ footer{padding:26px 0 10px;text-align:center;color:var(--ink3);font-size:12px;le
         </div>
       </div>
       <div class="step wide rv">
-        <div class="no">2-1<small>全案設計階段</small></div>
-        <div><h3>初步設計 — <span class="goldline">手繪草圖先定空間布局</span></h3>
-        <p>TA们對分析好的建築與人，思考給予業主更好的解決方案，耐心經歷「不斷建立、推翻、重建、再推翻」的取捨過程。</p></div>
+        <div class="no">2-1<small>全案設計階段<span class="stage-en">Full-Scope Design</span></small></div>
+        <div><h3>初步設計 — <span class="goldline">手繪草圖先定空間布局</span><span class="h3-en">Preliminary Design — Hand Sketches Set the Layout First</span></h3>
+        <p>TA们對分析好的建築與人，思考給予業主更好的解決方案，耐心經歷「不斷建立、推翻、重建、再推翻」的取捨過程。<span class="p-en">Working from the analysis of the building and the people in it, we think through better solutions for the client, patiently building up, tearing down and rebuilding until the choices settle.</span></p></div>
         <div class="strip3 s21">
           <figure><img src="assets/s13-1.jpg" alt="圍桌頭腦風暴，碰撞初步方案" loading="lazy"></figure>
           <figure><img src="assets/s13-4.jpg" alt="靜心思考：獨處時把方案想透（圖內「靜心思考」四字與底部技能關鍵詞完整呈現）" loading="lazy"></figure>
@@ -990,21 +1066,21 @@ footer{padding:26px 0 10px;text-align:center;color:var(--ink3);font-size:12px;le
         </div>
       </div>
       <div class="step wide rv">
-        <div class="no">2-2<small>全案設計階段</small></div>
-        <div><h3>深化設計 — <span class="goldline">所有細節提前確認</span></h3>
-        <p>TA们將思考的結果，先草圖、再效果圖，甲乙雙方的不斷探討，看得見摸得著的物料，逐漸清晰。</p></div>
+        <div class="no">2-2<small>全案設計階段<span class="stage-en">Full-Scope Design</span></small></div>
+        <div><h3>深化設計 — <span class="goldline">所有細節提前確認</span><span class="h3-en">Design Development — Every Detail Confirmed in Advance</span></h3>
+        <p>TA们將思考的結果，先草圖、再效果圖，甲乙雙方的不斷探討，看得見摸得著的物料，逐漸清晰。<span class="p-en">We take the thinking from sketches to renders, discussing it through with the client at every step, until the materials — seen and touched — come into focus.</span></p></div>
         <figure class="stripfull"><img src="assets/s14-composite.jpg" alt="深化設計四格拼圖：手繪平面、對著大屏講解方案、圍桌翻看選材樣冊、成排的石材樣板" loading="lazy"></figure>
       </div>
       <div class="step rv">
-        <div class="no">2-3<small>全案設計階段 · 續</small></div>
-        <div><h3>節點圖紙 — <span class="goldline">每一個節點都清晰可見</span></h3>
-        <p>建築結構改造、專業水電系統和裝飾施工等層面的圖紙，完整配合不斷層，只為完美交付這一個結果。</p></div>
+        <div class="no">2-3<small>全案設計階段 · 續<span class="stage-en">Full-Scope Design (continued)</span></small></div>
+        <div><h3>節點圖紙 — <span class="goldline">每一個節點都清晰可見</span><span class="h3-en">Detail Drawings — Every Junction Shown Clearly</span></h3>
+        <p>建築結構改造、專業水電系統和裝飾施工等層面的圖紙，完整配合不斷層，只為完美交付這一個結果。<span class="p-en">Drawings for structural alteration, specialist plumbing and electrical systems, and decorative works — fully coordinated, with no gaps — all for one result: flawless delivery.</span></p></div>
         <figure class="stripfull"><img src="assets/s15-composite.png" alt="節點圖紙四格拼圖：施工圖冊翻頁、硬裝物料單、混凝土連接節點圖、機電分層軸測圖" loading="lazy"></figure>
       </div>
       <div class="step rv">
-        <div class="no">03<small>施工準備階段</small></div>
-        <div><h3>工作聯繫函 — <span class="goldline">開工前扼制惡意增項</span></h3>
-        <p>TA们以工作聯繫函方式推進，有據可依、層層鋪開確認，開工前就從源頭扼制惡意增項。</p></div>
+        <div class="no">03<small>施工準備階段<span class="stage-en">Pre-Construction Preparation</span></small></div>
+        <div><h3>工作聯繫函 — <span class="goldline">開工前扼制惡意增項</span><span class="h3-en">Work Correspondence — Stopping Unjustified Charges Before Work Starts</span></h3>
+        <p>TA们以工作聯繫函方式推進，有據可依、層層鋪開確認，開工前就從源頭扼制惡意增項。<span class="p-en">We proceed by formal written correspondence, confirming each step on record, so unjustified additional charges are stopped at the source before work begins.</span></p></div>
         <div class="gal gal3">
           <figure style="aspect-ratio:0.704"><img src="assets/s16-1.jpg" alt="天樾書院項目工作聯繫函實物一" loading="lazy"></figure>
           <figure style="aspect-ratio:0.701"><img src="assets/s16-2.jpg" alt="工作聯繫函實物二" loading="lazy"></figure>
@@ -1015,9 +1091,9 @@ footer{padding:26px 0 10px;text-align:center;color:var(--ink3);font-size:12px;le
         </div>
       </div>
       <div class="step rv">
-        <div class="no">04<small>落地階段</small></div>
-        <div><h3>全案跟進</h3>
-        <p>TA们很親和，別把他當大師，而是一起築巢的好伙伴。</p></div>
+        <div class="no">04<small>落地階段<span class="stage-en">Delivery</span></small></div>
+        <div><h3>全案跟進<span class="h3-en">Full-Scope Follow-Through</span></h3>
+        <p>TA们很親和，別把他當大師，而是一起築巢的好伙伴。<span class="p-en">They are warm and approachable. Don't think of them as masters — think of them as partners building a nest together.</span></p></div>
         <figure class="stripfull"><img src="assets/s17-composite.png" alt="落地跟進拼圖：施工現場照片與客戶在微信中給予的真實好評截圖" loading="lazy"></figure>
       </div>
     </div>
@@ -1032,12 +1108,12 @@ footer{padding:26px 0 10px;text-align:center;color:var(--ink3);font-size:12px;le
     <div class="sysgrid">
       <div class="frame rv" style="background:#efe7d3"><img src="assets/s18-2.png" alt="住宅三層爆炸軸測圖（原稿圖紙）" loading="lazy" style="object-fit:contain"></div>
       <div class="syslist rv">
-        <div><b><i>01</i>拆改系統</b><span>土建、結構、施工工藝</span></div>
-        <div><b><i>02</i>美學系統</b><span>風格多樣化、色彩材質、搭配原則</span></div>
-        <div><b><i>03</i>產品系統</b><span>材質質感、產品選搭、價格把控</span></div>
-        <div><b><i>04</i>舒適系統</b><span>恒温、恒濕、恒氧、照明</span></div>
-        <div><b><i>05</i>工藝系統</b><span>細節、收口、對稱、銜接</span></div>
-        <div><b><i>06</i>收納系統</b><span>生活方式、人體工程學、動線分析、分類原則</span></div>
+        <div><b><i>01</i>拆改系統</b><span>土建、結構、施工工藝</span><span class="sys-en">Demolition &amp; Alteration — Civil works, structure, construction methods</span></div>
+        <div><b><i>02</i>美學系統</b><span>風格多樣化、色彩材質、搭配原則</span><span class="sys-en">Aesthetics — Varied styles, colors and materials, principles of composition</span></div>
+        <div><b><i>03</i>產品系統</b><span>材質質感、產品選搭、價格把控</span><span class="sys-en">Products — Material quality, product selection, price control</span></div>
+        <div><b><i>04</i>舒適系統</b><span>恒温、恒濕、恒氧、照明</span><span class="sys-en">Comfort — Constant temperature, humidity and oxygen, lighting</span></div>
+        <div><b><i>05</i>工藝系統</b><span>細節、收口、對稱、銜接</span><span class="sys-en">Craftsmanship — Details, joints, symmetry, junctions</span></div>
+        <div><b><i>06</i>收納系統</b><span>生活方式、人體工程學、動線分析、分類原則</span><span class="sys-en">Storage — Way of life, ergonomics, circulation, sorting principles</span></div>
       </div>
     </div>
     <div class="sysband rv" aria-hidden="true"></div>
@@ -1049,6 +1125,7 @@ footer{padding:26px 0 10px;text-align:center;color:var(--ink3);font-size:12px;le
   <div class="quote-band">
     <div class="q rv">
       <p>落地品控好，並不完全因為開工後的服務做得好，<br>而是<em>開工前的準備做得好</em>。</p>
+      <p class="q-en">Good delivery quality comes not only from service after work starts, but from preparation before it.</p>
     </div>
     <figure class="rv"><img src="assets/art.jpg" alt="女子手持幾何毛氈模塊的藝術照片" loading="lazy"></figure>
   </div>
@@ -1060,6 +1137,7 @@ footer{padding:26px 0 10px;text-align:center;color:var(--ink3);font-size:12px;le
     <p class="kicker rv">Case Show · Residence Space</p>
     <h2 class="title rv casestitle"><span class="ta">TA們的</span><span class="big">私宅作品</span></h2>
     <p class="lede rv"><span class="emdot">不套模板</span>，所以不專注某種風格。</p>
+    <p class="lede-en rv">No templates — so no single style.</p>
   </div>
 </section>
 <div class="wrap" id="casewrap"></div>
@@ -1081,6 +1159,7 @@ footer{padding:26px 0 10px;text-align:center;color:var(--ink3);font-size:12px;le
     <p class="kicker rv">Full Category Service Flow</p>
     <h2 class="title rv">全品類服務流程</h2>
     <p class="lede rv">九個節點走完一個家。收費節點寫在明處：第一筆 35%，開工前累計收至 90%，開工後兩筆各 5%，合計 100%。</p>
+    <p class="lede-en rv">Nine milestones complete a home. The payment points are stated openly: 35% first, 90% in total before construction starts, then two payments of 5% after work begins — 100% in all.</p>
     <div class="flow-layout">
     <div class="flowpct rv" id="flowpct" role="tablist" aria-label="收費節點百分比"></div>
     <div class="flow-frame rv" id="flowscroll"><div class="flow-strip" id="flowstrip" role="img" aria-label="全品類服務流程原稿長圖（透明底，疊放於深色底上）"><img data-s="0" src="assets/s49-p01.png" alt="" aria-hidden="true" loading="lazy" style="left:0%;top:0%;width:23.49%"><img data-s="1" src="assets/s49-p02.png" alt="" aria-hidden="true" loading="lazy" style="left:23.49%;top:0%;width:18.206%"><img data-s="1" src="assets/s49-p03.png" alt="" aria-hidden="true" loading="lazy" style="left:23.49%;top:41.734%;width:10.502%"><img data-s="2" src="assets/s49-p04.png" alt="" aria-hidden="true" loading="lazy" style="left:41.696%;top:0%;width:2.709%"><img data-s="2" src="assets/s49-p05.png" alt="" aria-hidden="true" loading="lazy" style="left:33.992%;top:41.734%;width:10.413%"><img data-s="3" src="assets/s49-p06.png" alt="" aria-hidden="true" loading="lazy" style="left:44.405%;top:0%;width:10.591%"><img data-s="3" src="assets/s49-p07.png" alt="" aria-hidden="true" loading="lazy" style="left:44.405%;top:27.958%;width:9.902%"><img data-s="4" src="assets/s49-p08.png" alt="" aria-hidden="true" loading="lazy" style="left:54.996%;top:0%;width:27.82%"><img data-s="5" src="assets/s49-p09.png" alt="" aria-hidden="true" loading="lazy" style="left:82.815%;top:0%;width:17.185%"><img data-s="4" src="assets/s49-p10.png" alt="" aria-hidden="true" loading="lazy" style="left:54.307%;top:27.958%;width:28.508%"><img data-s="5" src="assets/s49-p11.png" alt="" aria-hidden="true" loading="lazy" style="left:82.815%;top:27.958%;width:17.185%"><img data-s="4" src="assets/s49-p12.png" alt="" aria-hidden="true" loading="lazy" style="left:54.307%;top:41.734%;width:21.514%"><img data-s="5" src="assets/s49-p13.png" alt="" aria-hidden="true" loading="lazy" style="left:75.821%;top:41.734%;width:24.179%"><img data-s="4" src="assets/s49-p14.png" alt="" aria-hidden="true" loading="lazy" style="left:54.307%;top:51.864%;width:28.264%"><img data-s="5" src="assets/s49-p15.png" alt="" aria-hidden="true" loading="lazy" style="left:82.571%;top:51.864%;width:17.429%"></div></div></div>
@@ -1093,6 +1172,7 @@ footer{padding:26px 0 10px;text-align:center;color:var(--ink3);font-size:12px;le
     <p class="kicker rv">Full Category Design Process</p>
     <h2 class="title rv">全品類設計流程</h2>
     <p class="lede rv">七個階段環環相扣。</p>
+    <p class="lede-en rv">Seven stages, each linked to the next.</p>
     <div class="dflow rv" id="dflow"></div>
   </div>
 </section>
@@ -1103,46 +1183,47 @@ footer{padding:26px 0 10px;text-align:center;color:var(--ink3);font-size:12px;le
     <p class="kicker rv">Design Fee Standard</p>
     <h2 class="title rv">設計取費 <span class="gold">· 互動報價</span></h2>
     <p class="lede rv">選好面積、服務類型與複雜程度，即時得出對外報價區間與計算過程。</p>
+    <p class="lede-en rv">Choose the area, service type and complexity to see the published fee range and the calculation — instantly.</p>
     <div class="calc-grid">
       <div>
         <div class="field">
-          <span class="lab">項目面積</span>
-          <div class="area-row"><input id="area" type="number" inputmode="numeric" min="30" max="5000" step="10" value="380" aria-label="項目面積，平方米"><span class="unit">㎡</span></div>
+          <span class="lab">項目面積<span class="lab-en">Project Area</span></span>
+          <div class="area-row"><input id="area" type="number" inputmode="numeric" min="30" max="5000" step="10" value="380" aria-label="項目面積，平方米"><span class="unit">㎡<span class="unit-en">sqm</span></span></div>
           <input id="arearange" type="range" min="50" max="2000" step="10" value="380" aria-label="面積滑桿">
           <p style="color:var(--ink3);font-size:13px;margin:6px 0 0" id="bandnote"></p>
         </div>
         <div class="field">
-          <span class="lab">服務類型</span>
+          <span class="lab">服務類型<span class="lab-en">Service Type</span></span>
           <div class="seg" id="svcseg">
-            <button type="button" data-s="1" class="on">托管全案設計<small>室內外概念＋方案＋深化＋軟裝＋落地配合</small></button>
-            <button type="button" data-s="0.85">自建房遠程設計（全案版）<small>室內外概念＋方案＋深化＋軟裝，另含室內反推建築的建築設計；不含落地配合</small></button>
-            <button type="button" data-s="0.7">自建房遠程設計（顧問版）<small>室內外概念＋方案＋軟裝</small></button>
-            <button type="button" data-s="0.2">異地概念包<small>室內外分析＋概念＋平面布局</small></button>
+            <button type="button" data-s="1" data-en="Managed Full-Scope Design" class="on">托管全案設計<small>室內外概念＋方案＋深化＋軟裝＋落地配合<span class="sm-en">Managed Full-Scope Design — Interior &amp; exterior concept, schematic and developed design, soft furnishing, and delivery coordination</span></small></button>
+            <button type="button" data-s="0.85" data-en="Self-Built Home Remote Design (Full-Scope)">自建房遠程設計（全案版）<small>室內外概念＋方案＋深化＋軟裝，另含室內反推建築的建築設計；不含落地配合<span class="sm-en">Self-Built Home Remote Design (Full-Scope) — Interior &amp; exterior concept, schematic and developed design, and soft furnishing; also includes architecture design developed from the interior layout. Delivery coordination not included.</span></small></button>
+            <button type="button" data-s="0.7" data-en="Self-Built Home Remote Design (Advisory)">自建房遠程設計（顧問版）<small>室內外概念＋方案＋軟裝<span class="sm-en">Self-Built Home Remote Design (Advisory) — Interior &amp; exterior concept, schematic design, and soft furnishing</span></small></button>
+            <button type="button" data-s="0.2" data-en="Remote Concept Package">異地概念包<small>室內外分析＋概念＋平面布局<span class="sm-en">Remote Concept Package — Interior &amp; exterior analysis, concept, and layout plan</span></small></button>
           </div>
-          <p class="fineprint" style="margin-top:12px">自建房遠程設計（全案版）不含機電暖通給排水系統設計與結構設計；如需此類服務，另按項目商議。</p>
+          <p class="fineprint" style="margin-top:12px">自建房遠程設計（全案版）不含機電暖通給排水系統設計與結構設計；如需此類服務，另按項目商議。<span class="fp-en">The Self-Built Home Remote Design (Full-Scope) service excludes MEP, HVAC and plumbing system design and structural design; these can be arranged separately per project.</span></p>
         </div>
         <div class="field" id="gradefield">
-          <span class="lab">設計複雜程度</span>
+          <span class="lab">設計複雜程度<span class="lab-en">Design Complexity</span></span>
           <div class="seg" id="gradeseg">
-            <button type="button" data-g="1">Ⅰ · 簡約實用<small>功能簡單，滿足基本居住需求</small></button>
-            <button type="button" data-g="2" class="on">Ⅱ · 品質進階<small>功能完備、系統設計要求較高，部分需要定制工藝提高品質</small></button>
-            <button type="button" data-g="3">Ⅲ · 奢華定制<small>功能超標準、所有細節考量極深，約相當於五星與白金五星級以上酒店標準</small></button>
+            <button type="button" data-g="1">Ⅰ · 簡約實用<small>功能簡單，滿足基本居住需求<span class="sm-en">I · Simple &amp; Practical — Simple functions, meeting essential living needs</span></small></button>
+            <button type="button" data-g="2" class="on">Ⅱ · 品質進階<small>功能完備、系統設計要求較高，部分需要定制工藝提高品質<span class="sm-en">II · Refined Quality — Complete functions, with higher demands on systems design; some bespoke craftsmanship to raise quality</span></small></button>
+            <button type="button" data-g="3">Ⅲ · 奢華定制<small>功能超標準、所有細節考量極深，約相當於五星與白金五星級以上酒店標準<span class="sm-en">III · Bespoke Luxury — Functions beyond standard, every detail considered in depth — roughly equivalent to five-star and platinum five-star hotel standards</span></small></button>
           </div>
         </div>
         <table class="rate-table" aria-label="設計取費標準表">
-          <tr><th>空間體量</th><th>Ⅰ 簡約實用</th><th>Ⅱ 品質進階</th><th>Ⅲ 奢華定制</th></tr>
-          <tr><td>500㎡ 以內</td><td>400–600 · min 4萬</td><td>600 · min 6萬</td><td>850 · min 8.5萬</td></tr>
-          <tr><td>500–1000㎡</td><td>300–400</td><td>400–600</td><td>600–850</td></tr>
-          <tr><td>1000㎡ 以上</td><td>200–300</td><td>200–400</td><td>300–600</td></tr>
+          <tr><th>空間體量<span class="th-en">Project Size</span></th><th>Ⅰ 簡約實用</th><th>Ⅱ 品質進階</th><th>Ⅲ 奢華定制</th></tr>
+          <tr><td>500㎡ 以內<span class="td-en">Up to 500 sqm</span></td><td>400–600 · min 4萬<span class="td-min">min ¥40,000</span></td><td>600 · min 6萬<span class="td-min">min ¥60,000</span></td><td>850 · min 8.5萬<span class="td-min">min ¥85,000</span></td></tr>
+          <tr><td>500–1000㎡<span class="td-en">500–1,000 sqm</span></td><td>300–400</td><td>400–600</td><td>600–850</td></tr>
+          <tr><td>1000㎡ 以上<span class="td-en">Over 1,000 sqm</span></td><td>200–300</td><td>200–400</td><td>300–600</td></tr>
         </table>
-        <p style="color:var(--ink3);font-size:12.5px;margin-top:10px">單位：元/㎡。500㎡ 以內 100㎡ 起收（不足 100㎡ 按 100㎡ 計）；min 為單項目最低取費。</p>
+        <p style="color:var(--ink3);font-size:12.5px;margin-top:10px">單位：元/㎡。500㎡ 以內 100㎡ 起收（不足 100㎡ 按 100㎡ 計）；min 為單項目最低取費。<span class="note-en">Unit: RMB per sqm. For projects up to 500 sqm, a minimum of 100 sqm applies (below 100 sqm, charged as 100 sqm); "min" is the minimum fee per project.</span></p>
       </div>
       <div class="result" aria-live="polite">
         <span class="r-lab">對外報價區間 · ESTIMATED FEE</span>
         <div class="amount" id="ramount">—</div>
         <div class="process" id="rprocess"></div>
-        <p class="disclaimer">價格為對外報價，供參考類比；實際費用以項目洽談與合同為準。</p>
-        <p class="fineprint">備註：本標準包含方案設計、擴初設計、精裝修施工圖設計及機電末端點位設計；不包含機電暖通給排水系統設計、軟裝設計與五星級酒店專業照明設計。費用已含方案、效果圖、施工圖及現場配合費用（不含異地差旅費）；變更部位在 20% 以內原則上不另收費，超過 20% 適當取費；因甲方原因推翻已確定方案重做的，將重新取費。單獨取費遇面積較大項目，可協商適當下調。</p>
+        <p class="disclaimer">價格為對外報價，供參考類比；實際費用以項目洽談與合同為準。<span class="d-en">These are published fees, for reference and comparison; the actual fee is agreed through discussion and contract.</span></p>
+        <p class="fineprint" id="calcnote">備註：本標準包含方案設計、擴初設計、精裝修施工圖設計及機電末端點位設計；不包含機電暖通給排水系統設計、軟裝設計與五星級酒店專業照明設計。費用已含方案、效果圖、施工圖及現場配合費用（不含異地差旅費）；變更部位在 20% 以內原則上不另收費，超過 20% 適當取費；因甲方原因推翻已確定方案重做的，將重新取費。單獨取費遇面積較大項目，可協商適當下調。<span class="fp-en">Note: this fee standard covers concept design, expanded preliminary design, detailed interior construction drawings, and MEP terminal point layouts. It excludes MEP, HVAC and plumbing system design, soft furnishing design, and specialist five-star hotel lighting design. The fee includes concept, renders, construction drawings and site coordination (excluding out-of-town travel). Changes affecting up to 20% of the scope are generally not charged extra; beyond 20%, an additional fee applies as appropriate. If the client overturns an agreed design and asks for it to be redone, a new fee applies. For larger projects charged on a standalone basis, a reduction may be negotiated.</span></p>
       </div>
     </div>
   </div>
@@ -1171,11 +1252,11 @@ footer{padding:26px 0 10px;text-align:center;color:var(--ink3);font-size:12px;le
     <img src="assets/s52-logo-white.png" alt="FINENESS 梵凝空間設計（北京）事務所" loading="lazy">
   </div>
 </section>
-<footer>FINENESS 梵凝空間設計（北京）事務所 · 私宅全案設計</footer>
+<footer>FINENESS 梵凝空間設計（北京）事務所 · 私宅全案設計<span class="foot-en">Fineness Design (Beijing) — Private Residence Full-Scope Design</span></footer>
 
 <nav class="chapters" aria-label="章節導覽">
   <div class="wrap">
-    <a href="#why">為何選擇</a><a href="#services">八項服務</a><a href="#founders">創始人</a><a href="#pain">痛點</a><a href="#how">怎麼做</a><a href="#cases">案例</a><a href="#dims">多維需求</a><a href="#service-flow">流程</a><a href="#calc">報價</a>
+    <a href="#why">為何選擇<span class="nav-en">Why Choose</span></a><a href="#services">八項服務<span class="nav-en">Services</span></a><a href="#founders">創始人<span class="nav-en">Founders</span></a><a href="#pain">痛點<span class="nav-en">Pain Points</span></a><a href="#how">怎麼做<span class="nav-en">How We Work</span></a><a href="#cases">案例<span class="nav-en">Cases</span></a><a href="#dims">多維需求<span class="nav-en">Dimensions</span></a><a href="#service-flow">流程<span class="nav-en">Process</span></a><a href="#calc">報價<span class="nav-en">Fees</span></a>
   </div>
 </nav>
 
@@ -1268,7 +1349,7 @@ var PINS=[
  ['爾灣',14.1,43.2,0],['邁阿密',24.3,48.3,0],['阿比讓',45.6,61.7,0],['阿爾及爾',46.7,44.8,0],['吉布提',60.6,51.3,0],['達累斯薩拉姆',56.9,60.5,0],['多哈',60.9,48.6,0],['比什凱克',69.6,38.2,0],['仰光',73.3,55.3,0],['曼谷',74.2,55.5,0],['金邊',75.5,58.1,0],['河內',74.4,51.8,0],['雅庫茨克',80.3,23.3,0],['熊本',80.1,46.4,0]
 ];
 var mp=document.getElementById('mappins');
-var pinEls=PINS.map(function(p){var s=document.createElement('span');s.className='pin'+(p[3]===2?' major':p[3]===1?' big':'');s.style.left=p[1]+'%';s.style.top=p[2]+'%';s.title=p[0];s.innerHTML='<i></i>'+(p[3]===2?'<em>'+p[0]+'</em>':'');mp.appendChild(s);return s;});
+var pinEls=PINS.map(function(p){var s=document.createElement('span');s.className='pin'+(p[3]===2?' major':p[3]===1?' big':'');s.style.left=p[1]+'%';s.style.top=p[2]+'%';s.title=p[0];s.innerHTML='<i></i>'+(p[3]===2?'<em>'+p[0]+(p[0]==='北京'?'<span class="pin-en">Beijing</span>':'')+'</em>':'');mp.appendChild(s);return s;});
 var mapPlayed=false;
 var mapIO=new IntersectionObserver(function(es){es.forEach(function(e){
   if(e.isIntersecting){if(mapPlayed)return;mapPlayed=true;
@@ -1347,14 +1428,14 @@ if(phoneEl){
 
 /* services strips */
 var SERVICES=[
- {n:'室內設計',e:'INTERIOR DESIGN',img:'assets/s05-2.png',d:'空間比例、功能分配、材質與燈光的整體設計——一切的起點。'},
- {n:'景觀規劃',e:'LANDSCAPE PLANNING',img:'assets/s05-3.jpg',d:'把庭院、露台與窗外風景，一併納入室內的視線與動線。'},
- {n:'燈光實施',e:'LIGHTING IMPLEMENTATION',img:'assets/s05-5.jpg',d:'不止選燈：照度、色温與場景模式，在圖紙階段就定死。'},
- {n:'機電配套',e:'MECHANICAL & ELECTRICAL',img:'assets/s05-4.jpg',d:'暖通、水電、智能系統的末端點位，與裝飾面嚴絲合縫。'},
- {n:'施工管理',e:'CONSTRUCTION MANAGEMENT',img:'assets/s05-8.png',d:'圖紙推演、節點驗收、過程糾錯——設計師盯的不是熱鬧，是標準。'},
- {n:'軟裝配套',e:'SOFT FURNISHING',img:'assets/s05-9.jpg',d:'家具、布藝、藝術品按預算成套落地，與硬裝同圖同源。'},
- {n:'視宣服務',e:'VISUAL PUBLICITY',img:'assets/s05-7.jpg',d:'項目影像與視覺記錄，讓每一次交付都留下可傳播的證據。'},
- {n:'售後體系',e:'AFTER-SALES SYSTEM',img:'assets/s05-6.jpg',d:'交付不是終點：入住後的調整與維護，有人負責到底。'}
+ {n:'室內設計',e:'INTERIOR DESIGN',img:'assets/s05-2.png',d:'空間比例、功能分配、材質與燈光的整體設計——一切的起點。',den:'The overall design of proportion, function, materials and light — where everything begins.'},
+ {n:'景觀規劃',e:'LANDSCAPE PLANNING',img:'assets/s05-3.jpg',d:'把庭院、露台與窗外風景，一併納入室內的視線與動線。',den:"Courtyards, terraces and the view outside, brought into the interior's sightlines and circulation."},
+ {n:'燈光實施',e:'LIGHTING IMPLEMENTATION',img:'assets/s05-5.jpg',d:'不止選燈：照度、色温與場景模式，在圖紙階段就定死。',den:'More than choosing lights: illuminance, color temperature and scene settings, fixed at drawing stage.'},
+ {n:'機電配套',e:'MECHANICAL & ELECTRICAL',img:'assets/s05-4.jpg',d:'暖通、水電、智能系統的末端點位，與裝飾面嚴絲合縫。',den:'HVAC, plumbing, electrical and smart-system terminal points, aligned precisely with the finished surfaces.'},
+ {n:'施工管理',e:'CONSTRUCTION MANAGEMENT',img:'assets/s05-8.png',d:'圖紙推演、節點驗收、過程糾錯——設計師盯的不是熱鬧，是標準。',den:'Drawing reviews, detail inspections and corrections along the way — the designer watches the standards, not the show.'},
+ {n:'軟裝配套',e:'SOFT FURNISHING',img:'assets/s05-9.jpg',d:'家具、布藝、藝術品按預算成套落地，與硬裝同圖同源。',den:'Furniture, fabrics and art delivered as a set, on budget — drawn from the same source as the hard finishes.'},
+ {n:'視宣服務',e:'VISUAL PUBLICITY',img:'assets/s05-7.jpg',d:'項目影像與視覺記錄，讓每一次交付都留下可傳播的證據。',den:'Photography and visual records of each project, so every delivery leaves something worth sharing.'},
+ {n:'售後體系',e:'AFTER-SALES SYSTEM',img:'assets/s05-6.jpg',d:'交付不是終點：入住後的調整與維護，有人負責到底。',den:'Delivery is not the end: adjustments and maintenance after move-in, with someone accountable throughout.'}
 ];
 var row=document.getElementById('striprow'),panel=document.getElementById('strippanel'),curSvc=0;
 SERVICES.forEach(function(s,i){
@@ -1370,17 +1451,17 @@ SERVICES.forEach(function(s,i){
   row.appendChild(b);
 });
 function setSvc(i){curSvc=i;row.querySelectorAll('.strip').forEach(function(el,j){el.classList.toggle('active',j===i);el.setAttribute('aria-selected',j===i?'true':'false');});
-  panel.innerHTML='<b>'+SERVICES[i].n+'</b><p>'+SERVICES[i].d+'</p>';
+  panel.innerHTML='<b>'+SERVICES[i].n+'</b><p>'+SERVICES[i].d+'<span class="svc-en">'+SERVICES[i].den+'</span></p>';
   panel.classList.remove('sweep');void panel.offsetWidth;panel.classList.add('sweep');}
 setSvc(0);
 
 /* cases — full restoration: all 95 placements from PPT pp.21-47; sizes follow the original layout (large = key, small = secondary); s32-3 is placed twice in the original (32P & 33P) and shown in both positions */
-var CASES=[{"name": "科特迪瓦總統府秘書長宅邸", "en": "CÔTE D’IVOIRE · 2016", "desc": "地中海式海景奢華：白牆、玻璃、海藍與陽光，酒店度假感最強的一組實景。", "serif": false, "imgs": [{"f": "s21-1.jpg", "ar": 1.791, "s": 12}, {"f": "s22-1.jpg", "ar": 1.862, "s": 12}, {"f": "s22-2.jpg", "ar": 1.08, "s": 5, "p": 1}, {"f": "ci-bath.jpg", "ar": 1.512, "s": 7, "p": 1}], "n": 4}, {"name": "坦桑尼亞海邊別墅項目", "en": "TANZANIA · 2024", "desc": "熱帶現代、與自然共生：以泳池為中心組織生活；手繪與軸測，是方案推敲的痕跡。", "serif": false, "custom": "tz", "imgs": [], "n": 2}, {"name": "北京九章別墅", "en": "BEIJING · 2025", "desc": "自然靜奢風：挑高大空間、旋轉樓梯、面園餐廳，厚重而克制。", "serif": false, "fix": 1, "jz": 1, "imgs": [{"f": "s27-1.jpg", "ar": 1.04, "s": 6}, {"f": "s27-3.jpg", "ar": 1.04, "s": 6}, {"f": "s27-2.jpg", "ar": 0.6, "s": 4, "p": 1}, {"f": "s28-1.jpg", "ar": 0.6, "s": 4, "p": 1}, {"f": "s28-2.jpg", "ar": 0.6, "s": 4, "p": 1}, {"f": "s28-3.jpg", "ar": 0.765, "s": 7, "p": 1}, {"f": "s28-4.jpg", "ar": 0.546, "s": 5, "p": 1}], "n": 7}, {"name": "江苏南通自建别墅", "en": "NANTONG", "desc": "白色現代極簡獨棟。當地人拍發的短視頻，曾引出近兩千條評論——好房子，自己會說話。", "serif": false, "fix": 1, "nt": 1, "imgs": [{"f": "s29-1.jpg", "ar": 1.784, "s": 12}, {"f": "s30-1.jpg", "ar": 1.777, "s": 12}, {"f": "s30-2.jpg", "ar": 0.95, "s": 4, "p": 1}, {"f": "s30-3.jpg", "ar": 0.95, "s": 4, "p": 1}, {"f": "s30-4.jpg", "ar": 0.95, "s": 4, "p": 1}], "n": 8}, {"name": "北京天樾書院別墅", "en": "BEIJING · 2024", "desc": "淺米極簡、年輕家庭的宜居感：電競房、貓梯、車庫同框，是這一案最被記住的畫面。", "serif": false, "fix": 1, "grp": 1, "imgs": [{"f": "s32-1.jpg", "ar": 2.842, "s": 7, "p": 1}, {"f": "s33-4.jpg", "ar": 2.03, "s": 5, "p": 1}, {"f": "s33-5.jpg", "ar": 1.087, "s": 5, "p": 1}, {"f": "s34-1.jpg", "ar": 1.522, "s": 7, "p": 1}, {"f": "s34-3.png", "ar": 1, "s": 4, "a": 1, "p": 1}, {"f": "s34-2.jpg", "ar": 1.6, "s": 8, "p": 1}], "n": 10}, {"name": "北京碧海方舟別墅", "en": "BEIJING · 2022", "desc": "白色法式優雅：灰大理石、芥末黄與橙色點綴、弧形樓梯。", "serif": false, "fix": 1, "imgs": [{"f": "s35-1.jpg", "ar": 2.182, "s": 12}, {"f": "s36-1.jpg", "ar": 1.498, "s": 12}, {"f": "s36-2.jpg", "ar": 1.3, "s": 6, "p": 1}, {"f": "s36-3.jpg", "ar": 1.3, "s": 6, "p": 1}, {"f": "s37-1.jpg", "ar": 0.556, "s": 3, "p": 1}, {"f": "s37-2.jpg", "ar": 0.926, "s": 5, "p": 1}, {"f": "s37-3.jpg", "ar": 0.741, "s": 4, "p": 1}], "n": 7}, {"name": "北京望京府別墅", "en": "BEIJING · 2022", "desc": "淺灰現代極簡，加一面懸空工藝的石材藝術牆，把克制與張力放在同一個空間裡。", "serif": false, "fix": 1, "imgs": [{"f": "s38-1.jpg", "ar": 1.55, "s": 12}, {"f": "s38-2.jpg", "ar": 2.072, "s": 12}, {"f": "s39-1.jpg", "ar": 2.319, "s": 12}, {"f": "s39-3.jpg", "ar": 1.493, "s": 12}], "n": 4}, {"name": "北京中國府別墅", "en": "BEIJING · 2022", "desc": "奶油法式加暖木田園：人字拼地板、藤編、書房——鬆弛感是設計出來的。", "serif": false, "imgs": [{"f": "s40-1.jpg", "ar": 0.823, "s": 6}, {"f": "s40-2.jpg", "ar": 0.842, "s": 6}, {"f": "s40-3.jpg", "ar": 0.823, "s": 6}, {"f": "s41-1.jpg", "ar": 0.823, "s": 6}, {"f": "s41-2.jpg", "ar": 0.765, "s": 6}, {"f": "s41-3.jpg", "ar": 0.765, "s": 6}], "n": 6}, {"name": "北京紫禁壹號院別墅", "en": "BEIJING · 2020", "desc": "金色歐式的極致奢華：雕花金欄杆、石材拼花、水晶吊燈；而工藝過程，是這一案的第二賣點。", "serif": false, "fix": 1, "craft": 1, "zj43": 1, "imgs": [{"f": "s42-1.jpg", "ar": 1.333, "s": 6, "p": 1}, {"f": "s42-2.jpg", "ar": 1.333, "s": 6, "p": 1}], "n": 12}, {"name": "北京盤古大觀七星公館大平层", "en": "BEIJING · 2014", "desc": "深色中式古典奢華：藻井吊頂、格柵屏風、圓形金飾，全組案例中最「中式」的一案。", "serif": false, "one": 1, "pg": 1, "fix": 1, "imgs": [], "n": 10}];
+var CASES=[{"name": "科特迪瓦阿比让某政府高官宅邸", "en": "CÔTE D'IVOIRE · 2016 — A Senior Government Official's Residence, Abidjan", "desc": "地中海式海景奢華：白牆、玻璃、海藍與陽光，酒店度假感最強的一組實景。", "descEn": "Mediterranean seaside luxury: white walls, glass, sea blue and sunlight — the most resort-like of all the finished homes.", "serif": false, "imgs": [{"f": "s21-1.jpg", "ar": 1.791, "s": 12}, {"f": "s22-1.jpg", "ar": 1.862, "s": 12}, {"f": "s22-2.jpg", "ar": 1.08, "s": 5, "p": 1}, {"f": "ci-bath.jpg", "ar": 1.512, "s": 7, "p": 1}], "n": 4}, {"name": "坦桑尼亞海邊別墅項目", "en": "TANZANIA · 2024 — Beachfront Villa", "desc": "熱帶現代、與自然共生：以泳池為中心組織生活；手繪與軸測，是方案推敲的痕跡。", "descEn": "Tropical modern, living with nature: life organized around the pool, with hand sketches and axonometrics tracing how the design was worked through.", "serif": false, "custom": "tz", "imgs": [], "n": 2}, {"name": "北京九章別墅", "en": "BEIJING · 2025 — Jiuzhang Villa", "desc": "自然靜奢風：挑高大空間、旋轉樓梯、面園餐廳，厚重而克制。", "descEn": "Natural quiet luxury: double-height spaces, a spiral stair and a garden-facing dining room — weighty, yet restrained.", "serif": false, "fix": 1, "jz": 1, "imgs": [{"f": "s27-1.jpg", "ar": 1.04, "s": 6}, {"f": "s27-3.jpg", "ar": 1.04, "s": 6}, {"f": "s27-2.jpg", "ar": 0.6, "s": 4, "p": 1}, {"f": "s28-1.jpg", "ar": 0.6, "s": 4, "p": 1}, {"f": "s28-2.jpg", "ar": 0.6, "s": 4, "p": 1}, {"f": "s28-3.jpg", "ar": 0.765, "s": 7, "p": 1}, {"f": "s28-4.jpg", "ar": 0.546, "s": 5, "p": 1}], "n": 7}, {"name": "江苏南通自建别墅", "en": "NANTONG — Self-Built Villa", "desc": "现代简约自建独栋的反常做法：先梳理生活，再布局平面，通过平面反推建筑，从结构、排雨防雷，再到室内硬装软装全维度建造。當地人拍發的短視頻，曾引出近兩千條評論——好房子，自己會說話。", "descEn": "An unconventional approach to a modern minimalist self-built home: first work out how life will be lived, then lay out the plan — and let the plan shape the building, from structure, rainwater drainage and lightning protection, all the way to interior hard and soft finishes. A short video filmed by a local drew nearly two thousand comments — a good house speaks for itself.", "serif": false, "fix": 1, "nt": 1, "imgs": [{"f": "s29-1.jpg", "ar": 1.784, "s": 12}, {"f": "s30-1.jpg", "ar": 1.777, "s": 12}, {"f": "s30-2.jpg", "ar": 0.95, "s": 4, "p": 1}, {"f": "s30-3.jpg", "ar": 0.95, "s": 4, "p": 1}, {"f": "s30-4.jpg", "ar": 0.95, "s": 4, "p": 1}], "n": 8}, {"name": "北京天樾書院別墅", "en": "BEIJING · 2024 — Tianyue Shuyuan Villa", "desc": "温暖極簡、年輕家庭的宜居生活：抬头是采光井，低头是猫狗在下一层打滚玩耍，平视则是伴侣在另一侧玩游戏或夹层里看电影，正是这种地下层的互动感，是这一案最被记住的画面", "descEn": "Warm minimalism, a young family's easy way of living: a light well above, cats and dogs tumbling about on the level below, and your partner gaming across the room or watching a film in the mezzanine. It is this sense of life interacting across the lower level that this project is remembered for.", "serif": false, "fix": 1, "grp": 1, "imgs": [{"f": "s32-1.jpg", "ar": 2.842, "s": 7, "p": 1}, {"f": "s33-4.jpg", "ar": 2.03, "s": 5, "p": 1}, {"f": "s33-5.jpg", "ar": 1.087, "s": 5, "p": 1}, {"f": "s34-1.jpg", "ar": 1.522, "s": 7, "p": 1}, {"f": "s34-3.png", "ar": 1, "s": 4, "a": 1, "p": 1}, {"f": "s34-2.jpg", "ar": 1.6, "s": 8, "p": 1}], "n": 10}, {"name": "北京碧海方舟別墅", "en": "BEIJING · 2022 — Bihai Fangzhou Villa", "desc": "白色法式優雅：灰大理石、芥末黄與橙色點綴、弧形樓梯。", "descEn": "White French elegance: grey marble, mustard and orange accents, and a curved staircase.", "serif": false, "fix": 1, "imgs": [{"f": "s35-1.jpg", "ar": 2.182, "s": 12}, {"f": "s36-1.jpg", "ar": 1.498, "s": 12}, {"f": "s36-2.jpg", "ar": 1.3, "s": 6, "p": 1}, {"f": "s36-3.jpg", "ar": 1.3, "s": 6, "p": 1}, {"f": "s37-1.jpg", "ar": 0.556, "s": 3, "p": 1}, {"f": "s37-2.jpg", "ar": 0.926, "s": 5, "p": 1}, {"f": "s37-3.jpg", "ar": 0.741, "s": 4, "p": 1}], "n": 7}, {"name": "北京望京府別墅", "en": "BEIJING · 2022 — Wangjing Fu Villa", "desc": "淺灰現代極簡，加一面懸空工藝的石材藝術牆，把克制與張力放在同一個空間裡。", "descEn": "Light grey modern minimalism, with a floating crafted stone art wall — restraint and tension in the same room.", "serif": false, "fix": 1, "imgs": [{"f": "s38-1.jpg", "ar": 1.55, "s": 12}, {"f": "s38-2.jpg", "ar": 2.072, "s": 12}, {"f": "s39-1.jpg", "ar": 2.319, "s": 12}, {"f": "s39-3.jpg", "ar": 1.493, "s": 12}], "n": 4}, {"name": "北京中國府別墅", "en": "BEIJING · 2022 — Zhongguo Fu Villa", "desc": "奶油法式加暖木田園：人字拼地板、藤編、書房——鬆弛感是設計出來的。", "descEn": "Cream French style with warm timber country touches: herringbone floors, rattan, a study — relaxation, by design.", "serif": false, "imgs": [{"f": "s40-1.jpg", "ar": 0.823, "s": 6}, {"f": "s40-2.jpg", "ar": 0.842, "s": 6}, {"f": "s40-3.jpg", "ar": 0.823, "s": 6}, {"f": "s41-1.jpg", "ar": 0.823, "s": 6}, {"f": "s41-2.jpg", "ar": 0.765, "s": 6}, {"f": "s41-3.jpg", "ar": 0.765, "s": 6}], "n": 6}, {"name": "北京紫禁壹號院別墅", "en": "BEIJING · 2020 — Zijin Yihaoyuan Villa", "desc": "金色歐式的極致奢華：雕花金欄杆、石材拼花、水晶吊燈；而工藝過程，是這一案的第二賣點。", "descEn": "Golden European opulence at its peak: carved gold balustrades, stone marquetry and crystal chandeliers — and the craftsmanship behind them is this project's second story.", "serif": false, "fix": 1, "craft": 1, "zj43": 1, "imgs": [{"f": "s42-1.jpg", "ar": 1.333, "s": 6, "p": 1}, {"f": "s42-2.jpg", "ar": 1.333, "s": 6, "p": 1}], "n": 12}, {"name": "北京盤古大觀七星公館", "en": "BEIJING · 2014 — Pangu Daguan Seven-Star Mansion", "desc": "目前保密等级最高的项目：位于北京中轴龙脉上的中式古典奢華，内有十余项国家级非遗名录工艺", "descEn": "Our most confidential project to date: classical Chinese luxury on the dragon spine of Beijing's central axis, home to more than ten crafts on the national intangible cultural heritage list.", "serif": false, "one": 1, "pg": 1, "fix": 1, "imgs": [], "n": 10}];
 CASES[3].ntv=1; /* Nantong's first frame is the click-to-play video (see the grid builder) */
-CASES[4].video='assets/tianyue.mp4';CASES[4].poster='assets/poster-tianyue.jpg';CASES[4].vnote='案例漫遊 · 天樾書院';
-CASES[5].video='assets/bihai.mp4';CASES[5].poster='assets/poster-bihai.jpg';CASES[5].vnote='實拍漫遊 · 碧海方舟';
+CASES[4].video='assets/tianyue.mp4';CASES[4].poster='assets/poster-tianyue.jpg';CASES[4].vnote='案例漫遊 · 天樾書院';CASES[4].vnoteEn='Project Walkthrough · Tianyue Shuyuan';
+CASES[5].video='assets/bihai.mp4';CASES[5].poster='assets/poster-bihai.jpg';CASES[5].vnote='實拍漫遊 · 碧海方舟';CASES[5].vnoteEn='Walkthrough of the Finished Home · Bihai Fangzhou';
 var PGHTML='<figure class="pgfig pg1" style="grid-column:span 12"><div class="pg1g"><div class="pgu u-a"><img src="assets/s45-1.jpg" alt="盤古大觀書房：藻井吊頂、整牆書架與青花瓷瓶" loading="lazy"></div><div class="pg1r"><div class="pgu u-b"><img src="assets/s45-5.jpg" alt="盤古大觀餐廳：圓桌與水晶吊燈" loading="lazy"></div><div class="pgu u-c"><img class="pgplan" src="assets/s45-2.jpg" alt="盤古大觀平面圖" loading="lazy"><img class="pgdet" src="assets/s45-4.jpg" alt="盤古大觀餐廳一隅：金色雕花牆與福字圓飾" loading="lazy"></div></div><div class="pglux" aria-hidden="true">LUXURY<br>IN THE<br>CLASSICS</div></div></figure>'+
-'<figure class="pgfig pg2" style="grid-column:span 12"><div class="pgu u-a"><img src="assets/s46-1.jpg" alt="盤古大觀客廳" loading="lazy"></div><div class="pgu u-b"><img src="assets/s46-2.jpg" alt="盤古大觀門廳：圓形金飾與石材拼花地面" loading="lazy"></div><div class="pgu u-c"><img src="assets/s46-4.jpg" alt="盤古大觀手繪透視圖：門廳" loading="lazy"></div><div class="pgu u-d"><img src="assets/s46-3.jpg" alt="盤古大觀手繪透視圖：客廳" loading="lazy"></div><div class="pgu u-t"><span>古典东方</span></div></figure>'+
+'<figure class="pgfig pg2" style="grid-column:span 12"><div class="pgu u-a"><img src="assets/s46-1.jpg" alt="盤古大觀客廳" loading="lazy"></div><div class="pgu u-b"><img src="assets/s46-2.jpg" alt="盤古大觀門廳：圓形金飾與石材拼花地面" loading="lazy"></div><div class="pgu u-c"><img src="assets/s46-4.jpg" alt="盤古大觀手繪透視圖：門廳" loading="lazy"></div><div class="pgu u-d"><img src="assets/s46-3.jpg" alt="盤古大觀手繪透視圖：客廳" loading="lazy"></div><div class="pgu u-t"><div class="pgt-wrap"><span class="pgt-cn">古典东方</span><span class="pgt-en"><i>C</i><i>l</i><i>a</i><i>s</i><i>s</i><i>i</i><i>c</i><i>a</i><i>l</i><i class="sp">&nbsp;</i><i>E</i><i>a</i><i>s</i><i>t</i></span></div></div></figure>'+
 '<figure class="pgfig pg3" style="grid-column:span 12"><div class="pgu u-a"><img src="assets/s47-1.jpg" alt="盤古大觀主臥：藻井吊頂、圓形窗夜景與花鳥屏風床頭牆" loading="lazy"></div><div class="pgu u-b"><img src="assets/s47-2.jpg" alt="盤古大觀主臥花鳥屏風與床頭細節" loading="lazy"></div><div class="pgu u-t"><span>Top Luxury<br>Customization</span></div></figure>';
 var TZHTML='<figure class="tz tz1" style="grid-column:span 12;aspect-ratio:1672/1377"><img class="tz-base" src="assets/tz-axo-base.jpg" alt="坦桑尼亞海邊別墅泳池軸測圖：以泳池為中心組織生活" loading="lazy"><div class="tz-mag"><img src="assets/tz-pool-circle.png" alt="泳池下沉式火盆休息區的圓形放大特寫，自火盆處緩緩放大"></div></figure>'+
 '<figure class="tz tz2" style="grid-column:span 12;aspect-ratio:1789/1000"><div class="tz2-row"><div class="tz2-left"><img src="assets/tz2-left2.jpg" alt="坦桑尼亞海邊別墅手繪：走廊小透視，Blowing comfort into every corner of the space" loading="lazy"></div><div class="tz2-right"><img src="assets/tz2-right2.jpg" alt="坦桑尼亞海邊別墅臥室衛浴套間軸測手繪" loading="lazy"></div></div></figure>';
@@ -1413,9 +1494,9 @@ CASES.forEach(function(c,i){
   if(c.nt)grid+='<figure class="pairf ntv" style="grid-column:span 4;aspect-ratio:.68"><img src="assets/s31-2.jpg" alt="江蘇南通別墅 牆面細節：米色護牆板與燈龕" loading="lazy"></figure><figure class="pairf ntv dyv" style="grid-column:span 4;aspect-ratio:.68"><img src="assets/s30-6.jpg" alt="江蘇南通別墅 抖音視頻截圖：別墅外景，點贊 3.1 萬、評論 1949、收藏 1331、分享 3596 完整可見" loading="lazy"></figure><figure class="pairf ntv dyv" style="grid-column:span 4;aspect-ratio:.68"><img src="assets/s30-7.png" alt="江蘇南通別墅 抖音評論區截圖：共 1949 條評論，熱評點贊 1442、1204、395、318、264 完整可見" loading="lazy"></figure>';
   if(c.pg)grid=PGHTML+grid;
   if(c.craft)grid+='<figure class="zjcraft" style="grid-column:span 12"><div class="zjcap"><h4>工匠精神</h4><p class="zjen">MASTER CRAFTSMANSHIP FOR LUXURY BESPOKE INTERIORS</p><p class="zjtxt">石材拼花、石材拼貼、石雕件與雕花木椅白坯——從圖紙到成品，皆出自匠人之手。<span>Stone marquetry and inlay, carved stonework and carved-wood chair blanks — made by hand, from drawing to finished piece.</span></p></div><div class="zjg"><img src="assets/s44-1.jpg" alt="紫禁壹號院 工匠精神系列 石材拼花花鳥" loading="lazy"><img src="assets/s44-2.jpg" alt="紫禁壹號院 工匠精神系列 石材拼貼山水" loading="lazy"><img src="assets/s44-3.jpg" alt="紫禁壹號院 工匠精神系列 石雕件" loading="lazy"><img src="assets/s44-4.jpg" alt="紫禁壹號院 工匠精神系列 雕花木椅白坯" loading="lazy"></div></figure>';
-  var vid=c.video?'<div class="casevid ntvid"><video preload="none" poster="'+c.poster+'" playsinline src="'+c.video+'" aria-label="'+c.vnote+'"></video><button type="button" class="ntplay" aria-label="播放'+c.name+'案例視頻"><span aria-hidden="true"></span></button></div><p class="video-note">'+c.vnote+'</p>':'';
+  var vid=c.video?'<div class="casevid ntvid"><video preload="none" poster="'+c.poster+'" playsinline src="'+c.video+'" aria-label="'+c.vnote+'"></video><button type="button" class="ntplay" aria-label="播放'+c.name+'案例視頻"><span aria-hidden="true"></span></button></div><p class="video-note">'+c.vnote+(c.vnoteEn?'<span class="vn-en">'+c.vnoteEn+'</span>':'')+'</p>':'';
   var num=(i+1<10?'0':'')+(i+1);
-  sec.innerHTML='<span class="bgnum" aria-hidden="true">'+num+'</span><div class="case-head'+(i%2?' flip':'')+'"><div><span class="idx">CASE '+num+' · RESIDENCE SPACE</span><h3 class="'+(c.serif?'serif':'')+'">'+c.name+'</h3><span class="meta">'+c.en+'</span></div><p class="desc one" style="--dn:'+(c.desc.length+1.5)+'">'+c.desc+'</p></div><div class="cg">'+grid+'</div>'+vid;
+  sec.innerHTML='<span class="bgnum" aria-hidden="true">'+num+'</span><div class="case-head'+(i%2?' flip':'')+'"><div><span class="idx">CASE '+num+' · RESIDENCE SPACE</span><h3 class="'+(c.serif?'serif':'')+'">'+c.name+'</h3><span class="meta">'+c.en+'</span></div><p class="desc one" style="--dn:'+(c.desc.length+1.5)+'">'+c.desc+(c.descEn?'<span class="desc-en">'+c.descEn+'</span>':'')+'</p></div><div class="cg">'+grid+'</div>'+vid;
   cw.appendChild(sec);io.observe(sec);ioOut.observe(sec);
 });
 
@@ -1442,14 +1523,14 @@ document.querySelectorAll('.ntvid').forEach(function(f){
 
 /* dimensions tabs — all 9 originals from PPT p.48, re-homed per the original slide: the compass view layers plan (rotated as in the PPT) and nine-grid inside the transparent compass disc, on the white ground */
 var DIMS=[
- {n:'平面布局',t:'先解決「怎麼住」，再談「好不好看」',d:'動線、採光、通風與功能分配在平面階段一次定清；布局錯了，再貴的裝修也救不回來。',main:'assets/s48-plan-sketch.jpg',big:1,alt:'黑白手繪平面布局圖：主臥、家庭廳、餐廳、廚房、中餐廚房、餐具間與洗衣房等分區，附英文標注與視線扇形分析'},
- {n:'傳統居住智慧',t:'入户第一眼、方位與氣口，講的是居住的道理',d:'以傳統居住智慧看入户視線、方位與動線：講採光、通風與第一眼的秩序，不講玄虛。',layer:['assets/s48-2.png','assets/s48-8r.png','assets/s48-9x9.png'],alt:'羅盤圓盤疊加平面圖與九宮格，傳統居住智慧分析（原稿三層疊放）'},
- {n:'小空間與家具',t:'小空間，靠家具尺度與場景預演取勝',d:'每一件家具的尺寸、朝向與使用場景提前預演：櫃體多深、通道多寬、坐下起身順不順手，都先在圖上過一遍——小空間，也能住出從容。',main:'assets/s48-5.png',alt:'家具節點與尺度手繪原稿'},
- {n:'大空間軸測',t:'大空間，先用軸測把體量關係看透',d:'挑高、夾層與垂直動線以軸測推敲，避免大而空、空而散。',main:'assets/s48-6.png',alt:'大空間軸測分析圖（透明底原稿）'},
- {n:'景觀小品',t:'景觀牆與庭院小品，是室內向外的延伸',d:'景觀牆、庭院與小品，和室內同圖設計：站在屋裡往外看的那一面牆、那一處景，先在圖紙上定好位置與尺度，窗景才成為日常的背景。',main:'assets/s48-3.jpg',alt:'景觀空間透視手繪原稿',pair:1,subs:[['assets/s48-7.jpg','景觀牆節點手繪原稿']]}
+ {n:'平面布局',nen:'Layout Planning',t:'先解決「怎麼住」，再談「好不好看」',ten:'First Solve "How to Live", Then "How It Looks"',d:'動線、採光、通風與功能分配在平面階段一次定清；布局錯了，再貴的裝修也救不回來。',den:'Circulation, daylight, ventilation and function are settled at plan stage. Get the layout wrong, and no budget can save it.',main:'assets/s48-plan-sketch.jpg',big:1,alt:'黑白手繪平面布局圖：主臥、家庭廳、餐廳、廚房、中餐廚房、餐具間與洗衣房等分區，附英文標注與視線扇形分析'},
+ {n:'傳統居住智慧',nen:'The Classical Chinese Way of Dwelling',t:'入户第一眼、方位與氣口，講的是居住的道理',ten:'The First View on Entry, Orientation and Airflow: the Logic of Dwelling',d:'以傳統居住智慧看入户視線、方位與動線：講採光、通風與第一眼的秩序，不講玄虛。',den:'Seen through the classical Chinese way of dwelling: entry sightlines, orientation and circulation — daylight, ventilation and first impressions in order, nothing mystical.',layer:['assets/s48-2.png','assets/s48-8r.png','assets/s48-9x9.png'],alt:'羅盤圓盤疊加平面圖與九宮格，傳統居住智慧分析（原稿三層疊放）'},
+ {n:'細節考量',nen:'Considered Details',t:'細節考量只为场景预演',ten:'Considered Details — Rehearsing Every Scene',d:'每一件家具的尺寸、朝向與使用場景提前預演：櫃體多深、通道多寬、坐下起身順不順手，都先在圖上過一遍——細節考量，只為場景先演一遍。',den:'Every piece of furniture is rehearsed in advance — its size, orientation and use: how deep the cabinets, how wide the passages, how it feels to sit and stand. Every detail considered, so the scene is rehearsed before it is lived.',main:'assets/s48-5.png',alt:'家具節點與尺度手繪原稿'},
+ {n:'空間軸測',nen:'Spaces in Axonometric',t:'大空間，先用軸測把體量關係看透',ten:'In Large Spaces, Axonometrics Reveal the Volumes',d:'挑高、夾層與垂直動線以軸測推敲，避免大而空、空而散。',den:'Double heights, mezzanines and vertical circulation are worked through in axonometric — so large never becomes empty and scattered.',main:'assets/s48-6.png',alt:'大空間軸測分析圖（透明底原稿）'},
+ {n:'景觀小品',nen:'Landscape Features',t:'景觀牆與庭院小品，是室內向外的延伸',ten:'Garden Walls and Courtyard Pieces, the Interior Extended Outward',d:'景觀牆、庭院與小品，和室內同圖設計：站在屋裡往外看的那一面牆、那一處景，先在圖紙上定好位置與尺度，窗景才成為日常的背景。',den:'Garden walls, courtyards and landscape pieces are designed on the same drawings as the interior — the wall and the view seen from inside are fixed in position and scale on paper first, so the window view becomes part of daily life.',main:'assets/s48-3.jpg',alt:'景觀空間透視手繪原稿',pair:1,subs:[['assets/s48-7.jpg','景觀牆節點手繪原稿']]}
 ];
 var dt=document.getElementById('dimtabs'),dv=document.getElementById('dimview');
-DIMS.forEach(function(d,i){var b=document.createElement('button');b.type='button';b.textContent=d.n;b.setAttribute('role','tab');if(i===0)b.className='on';b.addEventListener('click',function(){setDim(i);});dt.appendChild(b);});
+DIMS.forEach(function(d,i){var b=document.createElement('button');b.type='button';b.innerHTML='<span class="dim-n">'+d.n+'</span>'+(d.nen?'<span class="dim-nen">'+d.nen+'</span>':'');b.setAttribute('role','tab');if(i===0)b.className='on';b.addEventListener('click',function(){setDim(i);});dt.appendChild(b);});
 var curDim=0;
 function setDim(i){curDim=i;dv.classList.toggle('plan-big',!!DIMS[i].big);dt.querySelectorAll('button').forEach(function(el,j){el.classList.toggle('on',j===i);});
   var d=DIMS[i],media='';
@@ -1457,7 +1538,7 @@ function setDim(i){curDim=i;dv.classList.toggle('plan-big',!!DIMS[i].big);dt.que
   else if(d.pair){media='<div class="pairbox"><img class="pw" src="'+d.subs[0][0]+'" alt="'+d.subs[0][1]+'" loading="lazy"><img class="pm" src="'+d.main+'" alt="'+d.alt+'" loading="lazy"></div>';}
   else{media='<img class="mainimg" src="'+d.main+'" alt="'+d.alt+'" loading="lazy">';}
   if(d.subs&&!d.pair){media+='<div class="subs">'+d.subs.map(function(s){return '<img src="'+s[0]+'" alt="'+s[1]+'" loading="lazy">';}).join('')+'</div>';}
-  dv.innerHTML='<div class="dim-media">'+media+'</div><div><h3>'+d.t+'</h3><p>'+d.d+'</p></div>';}
+  dv.innerHTML='<div class="dim-media">'+media+'</div><div><h3>'+d.t+(d.ten?'<span class="h3-en">'+d.ten+'</span>':'')+'</h3><p>'+d.d+(d.den?'<span class="p-en">'+d.den+'</span>':'')+'</p></div>';}
 setDim(0);
 /* the five dimension views' entrances replay on scroll-in too: setDim(0) fires at page load, long before this section is on screen, so when the view arrives (after having been off-screen) the current tab is rebuilt and its entrance plays in view; tab switches replay it as before */
 var dimWasOut=true;
@@ -1465,7 +1546,7 @@ var dimIO=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIn
 dimIO.observe(dv);
 
 /* service flow 49P — the frame is 7:4. The strip (the 2x s49-1-2x.png, 4504x1234, so the zoom stays sharp) is served as per-stage slices that tile the artwork with no gaps and no lost pixels; in the overview they read as the single original image. Selecting a percentage chip — by hovering it on desktop, tapping it on touch — fires three synced moves over .72s cubic-bezier(.16,1,.3,1): the chip itself grows to 1.25x and turns gold while the others dim to 55%; the strip glides sideways to centre that stage and scales by frame-height / strip-display-height (recomputed from the 7:4 frame), so the zoomed stage fills the frame height exactly — top payment labels and bottom branches stay whole, nothing cropped, no empty band; and the highlight is done by the slices themselves — the selected stage's slices stay fully lit while the other five stages' slices dim to 35% with a slight desaturation (no overlay frame: a rectangle could never cover a whole stage, because two neighbouring stages' labels and branches interleave across the spine — the slice boundaries step sideways inside the artwork's empty bands so each stage's label and branches fall wholly inside its own slices). The two 5% chips each light two flow nodes together, as the payments fall due: the hidden-works 5% lights the construction-start stage plus the hidden-works node, and the completion 5% lights the mid-construction node plus the completion-acceptance node. On desktop the mouse leaving a chip glides back to the overview and moving onto another chip glides straight to it (a mouse click no longer switches); on touch, tapping the lit chip again glides back. Stage centres were measured off the artwork's own content extents. */
-var FLOWPCT=[['35%','概念方案階段前收取'],['20%','方案設計階段前收取'],['20%','深化設計階段前收取'],['15%','設計階段完畢收取'],['5%','隱蔽工程節點完畢'],['5%','全部竣工收取']];
+var FLOWPCT=[['35%','概念方案階段前收取','Due before concept design'],['20%','方案設計階段前收取','Due before schematic design'],['20%','深化設計階段前收取','Due before design development'],['15%','設計階段完畢收取','Due on completion of the design stage'],['5%','隱蔽工程節點完畢','Due on completion of concealed works'],['5%','全部竣工收取','Due on final completion']];
 var fp=document.getElementById('flowpct'),fsc=document.getElementById('flowscroll'),fstrip=document.getElementById('flowstrip'),fslices=fstrip.querySelectorAll('img');
 var FLOWC=[11.0,33.3,38.8,50.1,66.8,91.9]; /* stage content centres along the strip, % — the two 5% groups are re-measured on their regrouped extents: chip 5 spans x 2456–3565 (centre 66.8%), chip 6 spans x 3776–4498 (centre 91.9%, clamped to the right edge by applyFlow) */
 var zoomStage=-1,flowTour=null,flowUser=false;
@@ -1484,7 +1565,7 @@ function applyFlow(i){
 }
 function flowZoom(i){flowUser=true;stopFlowAnim();applyFlow(zoomStage===i?-1:i);}
 var flowFine=window.matchMedia('(hover:hover) and (pointer:fine)').matches;
-FLOWPCT.forEach(function(p,i){var b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.setAttribute('aria-selected','false');b.innerHTML='<b>'+p[0]+'</b><span>'+p[1]+'</span>';
+FLOWPCT.forEach(function(p,i){var b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.setAttribute('aria-selected','false');b.innerHTML='<b>'+p[0]+'</b><span>'+p[1]+'</span><span class="fen">'+p[2]+'</span>';
   /* stage switching is hover-driven on hover-capable pointers, exactly like the services strip and the design-flow boxes: resting on a chip fires the same three synced moves as the old click — the chip grows to 1.25x and turns gold while the others dim, the strip glides to centre that stage, and that stage's slices stay lit while the other five dim — and the first hover also stops the self-running tour, just as the first click used to. Leaving the chip glides back to the overview, and a mouse click no longer switches anything. Touch has no hover, so a tap still toggles there (tap the lit chip again to return to the overview); keyboard focus lights the stage on desktop. */
   if(flowFine){
     b.addEventListener('mouseenter',function(){flowUser=true;stopFlowAnim();applyFlow(i);});
@@ -1513,17 +1594,17 @@ flowIO.observe(fsc);
 
 /* design flow 50P */
 var DFLOW=[
- ['01','設計啟動階段',['制定《項目設計進度計劃表》','輔助客戶填寫《客戶設計需求表》','完成室內現狀勘測','完成空間測量圖']],
- ['02','初步方案階段',['完成客戶設計需求分析','完成設計理念、設計思路定向','完成平面功能規劃方案','完成主空間風格定向','完成舒適系統需求定向']],
- ['03','效果方案階段',['完成主空間效果方案','完成主空間產品初步選型','完成主空間舒適系統終端定位原則','完成主空間水電終端定位原則','完成輔空間風格定向']],
- ['04','深化方案階段',['完成主、輔空間深化方案','完成空間與產品的主要搭接原則','完成主、輔空間產品選型方案','完成舒適系統與水電終端定位原則']],
- ['05','施工圖階段',['繪製施工圖紙','確定施工圖紙','根據設計方案的實現，審核施工報價內容']],
- ['06','產品方案階段',['完成設計實現配套產品方案','完成設備類產品方案','完成軟裝產品方案及預算']],
- ['07','開工準備與開工',['輔助完成施工簽約','輔助完成產品簽約','開工大吉']]
+ ['01','設計啟動階段',['制定《項目設計進度計劃表》','輔助客戶填寫《客戶設計需求表》','完成室內現狀勘測','完成空間測量圖'],'Design Kick-Off',['Prepare the Project Design Schedule','Assist the client in completing the Design Requirements Form','Complete the survey of the existing interior','Complete the measured survey drawings']],
+ ['02','初步方案階段',['完成客戶設計需求分析','完成設計理念、設計思路定向','完成平面功能規劃方案','完成主空間風格定向','完成舒適系統需求定向'],'Preliminary Design',["Analyze the client's design requirements",'Define the design concept and approach','Complete the functional layout plan','Define the style direction for primary spaces','Define the comfort systems requirements']],
+ ['03','效果方案階段',['完成主空間效果方案','完成主空間產品初步選型','完成主空間舒適系統終端定位原則','完成主空間水電終端定位原則','完成輔空間風格定向'],'Visualization',['Complete renders for the primary spaces','Complete preliminary product selection for primary spaces','Define terminal placement principles for comfort systems in primary spaces','Define terminal placement principles for plumbing and electrical systems in primary spaces','Define the style direction for secondary spaces']],
+ ['04','深化方案階段',['完成主、輔空間深化方案','完成空間與產品的主要搭接原則','完成主、輔空間產品選型方案','完成舒適系統與水電終端定位原則'],'Design Development',['Complete developed designs for primary and secondary spaces','Define the key interface principles between spaces and products','Complete product selection for primary and secondary spaces','Define terminal placement principles for comfort and MEP systems']],
+ ['05','施工圖階段',['繪製施工圖紙','確定施工圖紙','根據設計方案的實現，審核施工報價內容'],'Construction Drawings',['Prepare construction drawings','Finalize construction drawings','Review construction quotations to confirm they match the design']],
+ ['06','產品方案階段',['完成設計實現配套產品方案','完成設備類產品方案','完成軟裝產品方案及預算'],'Product Scheme',['Complete the product scheme for realizing the design','Complete the equipment product scheme','Complete the soft furnishing scheme and budget']],
+ ['07','開工準備與開工',['輔助完成施工簽約','輔助完成產品簽約','開工大吉'],'Pre-Construction & Commencement',['Assist with the construction contract signing','Assist with product procurement contracts','Construction begins']]
 ];
 var df=document.getElementById('dflow');
 var dfFine=window.matchMedia('(hover:hover) and (pointer:fine)').matches;
-DFLOW.forEach(function(s){var a=document.createElement('article');a.setAttribute('role','button');a.setAttribute('tabindex','0');a.setAttribute('aria-label',s[1]+(dfFine?'，懸停放大':'，點按放大'));a.innerHTML='<b>STAGE '+s[0]+'</b><h3>'+s[1]+'</h3><ul>'+s[2].map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul>';
+DFLOW.forEach(function(s){var a=document.createElement('article');a.setAttribute('role','button');a.setAttribute('tabindex','0');a.setAttribute('aria-label',s[1]+(dfFine?'，懸停放大':'，點按放大'));a.innerHTML='<b>STAGE '+s[0]+'</b><div class="df-zh"><h3>'+s[1]+'</h3><ul>'+s[2].map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul></div><div class="df-div" aria-hidden="true"></div><div class="df-en"><div class="df-en-title">'+s[3]+'</div><ul class="df-en-list">'+s[4].map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul></div>';
   function open(){df.querySelectorAll('article').forEach(function(x){x.classList.remove('open');});a.classList.add('open');}
   function shut(){a.classList.remove('open');}
   function tog(){var was=a.classList.contains('open');df.querySelectorAll('article').forEach(function(x){x.classList.remove('open');});if(!was)a.classList.add('open');}
@@ -1540,7 +1621,7 @@ var RATES={ /* band: [ [Ilo,Ihi],[IIlo,IIhi],[IIIlo,IIIhi] ] per sqm */
  3:[[200,300],[200,400],[300,600]]
 };
 var MINS={1:{1:40000,2:60000,3:85000}};
-var grade=2,svcMul=1,svcName='托管全案設計',svcConcept=false;
+var grade=2,svcMul=1,svcName='托管全案設計',svcNameEn='Managed Full-Scope Design',svcConcept=false;
 var areaIn=document.getElementById('area'),areaRg=document.getElementById('arearange');
 function fmt(n){return Math.round(n).toLocaleString('zh-Hant-CN');}
 function fmtWan(n){var v=n/10000;return (Math.round(v*10)/10).toLocaleString('zh-Hant-CN');}
@@ -1555,24 +1636,32 @@ function calc(){
   var min=MINS[band]&&MINS[band][effGrade];
   if(min){lo=Math.max(lo,min);hi=Math.max(hi,min);}
   var flo=lo*svcMul,fhi=hi*svcMul;
-  document.getElementById('bandnote').textContent='體量分檔：'+(band===1?'500㎡ 以內':band===2?'500–1000㎡':'1000㎡ 以上')+(band===1&&a<100?' · 不足 100㎡，按 100㎡ 計費':'');
+  var bandZh=band===1?'500㎡ 以內':band===2?'500–1000㎡':'1000㎡ 以上';
+  var bandEn=band===1?'Up to 500 sqm':band===2?'500–1,000 sqm':'Over 1,000 sqm';
+  var lowZh=band===1&&a<100?' · 不足 100㎡，按 100㎡ 計費':'';
+  var lowEn=band===1&&a<100?'; below 100 sqm, charged as 100 sqm':'';
+  document.getElementById('bandnote').innerHTML='<span class="bn-zh">體量分檔：'+bandZh+lowZh+'</span><span class="bn-en">Size band: '+bandEn+lowEn+'</span>';
   var amt=document.getElementById('ramount');
-  if(flo===fhi){amt.innerHTML='¥ '+fmt(flo)+' <small>（約 '+fmtWan(flo)+' 萬元）</small>';}
-  else{amt.innerHTML='¥ '+fmt(flo)+' – '+fmt(fhi)+' <small>（約 '+fmtWan(flo)+' – '+fmtWan(fhi)+' 萬元）</small>';}
+  if(flo===fhi){amt.innerHTML='¥ '+fmt(flo)+' <small>（約 '+fmtWan(flo)+' 萬元）</small><span class="amt-en">(approx. RMB '+fmt(flo)+')</span>';}
+  else{amt.innerHTML='¥ '+fmt(flo)+' – '+fmt(fhi)+' <small>（約 '+fmtWan(flo)+' – '+fmtWan(fhi)+' 萬元）</small><span class="amt-en">(approx. RMB '+fmt(flo)+' – '+fmt(fhi)+')</span>';}
   var gname={1:'Ⅰ 簡約實用',2:'Ⅱ 品質進階',3:'Ⅲ 奢華定制'}[effGrade];
-  var steps='<div>計費面積：<b>'+fmt(billable)+' ㎡</b>（申報 '+fmt(a)+' ㎡）</div>'
-    +'<div>適用單價：<b>'+(r[0]===r[1]?fmt(r[0]):fmt(r[0])+' – '+fmt(r[1]))+' 元/㎡</b>（'+gname+' · '+(band===1?'500㎡以內':band===2?'500–1000㎡':'1000㎡以上')+'）</div>'
-    +'<div>全案設計費：<b>'+(lo===hi?'¥ '+fmt(lo):'¥ '+fmt(lo)+' – '+fmt(hi))+'</b>'+(min?'（已按最低收費 ¥ '+fmt(min)+' 校驗）':'')+'</div>'
-    +(svcConcept?'<div>計費口徑：<b>異地概念包統一按簡約實用檔計費</b>，不分複雜程度</div>':'')
-    +(svcMul!==1?'<div>服務類型換算：'+svcName+' ＝ 全案設計費 × '+Math.round(svcMul*100)+'%</div>':'<div>服務類型：<b>'+svcName+'</b>（全額）</div>');
+  var gnameEn={1:'I · Simple & Practical',2:'II · Refined Quality',3:'III · Bespoke Luxury'}[effGrade];
+  var bandShortZh=band===1?'500㎡以內':band===2?'500–1000㎡':'1000㎡以上';
+  var steps='<div class="prow"><div class="plabs"><span class="pzh">計費面積（申報 '+fmt(a)+' ㎡）</span><span class="pen">Billable area (declared '+fmt(a)+' sqm)</span></div><b class="pbig">'+fmt(billable)+'<span class="punit">㎡ · sqm</span></b></div>'
+    +'<div class="prow"><div class="plabs"><span class="pzh">適用單價（'+gname+' · '+bandShortZh+'）</span><span class="pen">Applicable rate: RMB per sqm ('+gnameEn+' · '+bandEn+')</span></div><b class="pbig">'+(r[0]===r[1]?fmt(r[0]):fmt(r[0])+' – '+fmt(r[1]))+'<span class="punit">元/㎡</span></b></div>'
+    +'<div class="prow"><div class="plabs"><span class="pzh">全案設計費'+(min?'（已按最低收費 ¥ '+fmt(min)+' 校驗）':'')+'</span><span class="pen">Full-scope design fee'+(min?' (checked against the minimum fee of ¥'+fmt(min)+')':'')+'</span></div><b class="pbig">'+(lo===hi?'¥ '+fmt(lo):'¥ '+fmt(lo)+' – '+fmt(hi))+'</b></div>'
+    +(svcConcept?'<div class="prow"><div class="plabs"><span class="pzh">計費口徑：異地概念包統一按簡約實用檔計費，不分複雜程度</span><span class="pen">Fee basis: the Remote Concept Package is always charged at the Simple &amp; Practical tier, regardless of complexity.</span></div></div>':'')
+    +(svcMul!==1?'<div class="prow"><div class="plabs"><span class="pzh">服務類型換算：'+svcName+' ＝ 全案設計費 ×</span><span class="pen">Service type adjustment: '+svcNameEn+' = full-scope design fee ×</span></div><b class="pbig">'+Math.round(svcMul*100)+'%</b></div>':'<div class="prow"><div class="plabs"><span class="pzh">服務類型：'+svcName+'（全額）</span><span class="pen">Service type: '+svcNameEn+' (in full)</span></div><b class="pbig">100%</b></div>');
   document.getElementById('rprocess').innerHTML=steps;
+  /* the fee-standard note (F167) belongs to the managed full-scope service only: it is shown at 100% and hidden for the other three service types */
+  document.getElementById('calcnote').style.display=svcMul===1?'':'none';
 }
 areaIn.addEventListener('input',function(){areaRg.value=Math.min(2000,Math.max(50,parseFloat(areaIn.value)||50));calc();});
 areaRg.addEventListener('input',function(){areaIn.value=areaRg.value;calc();});
 function segWire(id,fn){var seg=document.getElementById(id);seg.querySelectorAll('button').forEach(function(b){b.addEventListener('click',function(){seg.querySelectorAll('button').forEach(function(x){x.classList.remove('on');});b.classList.add('on');fn(b);calc();});});}
 segWire('gradeseg',function(b){grade=parseInt(b.getAttribute('data-g'),10);});
 function syncGradeLock(){var f=document.getElementById('gradefield');f.classList.toggle('locked',svcConcept);f.querySelectorAll('button').forEach(function(x){x.disabled=svcConcept;});}
-segWire('svcseg',function(b){svcMul=parseFloat(b.getAttribute('data-s'));svcName=b.childNodes[0].textContent.trim();svcConcept=(b.getAttribute('data-s')==='0.2');syncGradeLock();});
+segWire('svcseg',function(b){svcMul=parseFloat(b.getAttribute('data-s'));svcName=b.childNodes[0].textContent.trim();svcNameEn=b.getAttribute('data-en')||'';svcConcept=(b.getAttribute('data-s')==='0.2');syncGradeLock();});
 syncGradeLock();
 calc();
 document.querySelectorAll('.fcontact-item').forEach(function(btn){
@@ -1581,10 +1670,10 @@ document.querySelectorAll('.fcontact-item').forEach(function(btn){
     function done(){
       var hint=btn.querySelector('.fcontact-hint');
       btn.classList.add('copied');
-      if(hint){hint.textContent='已複製';}
+      if(hint){hint.textContent='Copied';}
       setTimeout(function(){
         btn.classList.remove('copied');
-        if(hint){hint.textContent='複製';}
+        if(hint){hint.textContent='Copy';}
       },1600);
     }
     function fallback(){
